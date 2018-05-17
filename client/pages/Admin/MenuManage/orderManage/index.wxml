@@ -36,7 +36,7 @@
     </view>
 </view>  
 
- <!-- 取餐订单  -->
+ <!-- 点餐订单  -->
 <view hidden="{{currentTab!==1}}">  
     <view wx:for="{{orderqucan}}" wx:key="{{index}}" id="panel" class="flex-column">
         <view class="flex-cell flex-row">
@@ -67,7 +67,7 @@
     </view>
 </view>  
 
-<!--外卖订单-->  
+<!--预定订单-->  
 <view hidden="{{currentTab!==2}}">  
     <view wx:for="{{ordertake}}" wx:key="{{index}}" id="panel" class="flex-column">
         <view class="flex-cell flex-row">

@@ -52,7 +52,7 @@ page{
   width:70%;
   color:#000;
   line-height: 1.5;
-  text-align: right;
+  text-align: left;
 }
 .pic{
   width:95%;

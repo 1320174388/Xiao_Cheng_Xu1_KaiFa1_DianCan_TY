@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datas:false,
+    datas:true,
     imghost: config.service.imghost,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
 
@@ -50,7 +50,7 @@ Page({
         }else{
           THIS.setData({
             //true
-            datas: false
+            // datas: false
           })
         }
       }

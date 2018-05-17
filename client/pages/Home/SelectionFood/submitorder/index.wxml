@@ -46,7 +46,7 @@
     <scroll-view class="content-scroll" scroll-y>
       <block wx:for="{{food_info_arr.foods_crat}}" wx:key="{{index}}" wx:if="{{item}}" >
         <view class='menuifon'>
-          <image src='{{host}}{{item.food_img}}' class='img-menu'></image>
+          <image src='{{item.food_img}}' class='img-menu'></image>
           <text class='context-name'>{{item.food_name}}</text>
           <text class='context-number'>x{{item.food_number}}</text>
           <text class='context-price'>￥{{item.food_price}}</text>

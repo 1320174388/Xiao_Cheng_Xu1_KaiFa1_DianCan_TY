@@ -3,7 +3,7 @@
 <text data-y="y" class='{{select ? "changes" : "unchanges"}}' bindtap="select">菜品列表</text>
 </view>
 <view class='{{selected ? "show" : "hide" }}'>
-      <view class='list' wx:for="{{foodclass}}" wx:key="{{index}}">
+      <view class='list' wx:for="{{foodclass}}" wx:key="id">
             <view class='left'>
                 <view>{{item.class_name}}</view>
                 <text>序号：{{item.class_sort}}</text>
@@ -28,7 +28,7 @@
         <view  style="flex:1">
           <icon type="search" size="22"/>
         </view>  
-        <view style="flex:5">
+        <view style="flex:4">
           <input placeholder='搜索' name='food_name_search'/>
         </view>  
         <view style="flex:1">
@@ -39,9 +39,9 @@
     </view>
   </view>
 
-    <view class='menu' wx:for="{{datas}}" wx:key="{{index}}">
+    <view class='menu' wx:for="{{datas}}" wx:key="id">
         <view class='left'>
-            <image src='{{host}}{{item.food_img}}'></image>
+            <image src='{{item.food_img}}'></image>
             <view class='info'>
                 <view class='title'>
                     <view class='name'>{{item.food_name}}</view>
@@ -70,7 +70,7 @@
 
               <view class='contents'>
                     <view class='top'>
-                        <image wx:if='{{host&&foodInfo.food_img}}' src='{{host}}{{foodInfo.food_img}}'></image>
+                        <image wx:if='{{host&&foodInfo.food_img}}' src='{{foodInfo.food_img}}'></image>
                         <view class='info'>
                             <text>{{foodInfo.food_name}}</text>
                             <text class='num'>序号：{{foodInfo.food_sort}}</text>

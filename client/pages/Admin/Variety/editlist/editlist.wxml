@@ -7,7 +7,7 @@
   <view class="section">
     <text>选择分类</text>
     <radio-group class="radio-group" name="class_id" >
-      <label class="radio" wx:for="{{classlist}}" wx:key="{{index}}">
+      <label class="radio" wx:for="{{classlist}}" wx:key="id">
         <radio value="{{item.id}}" />{{item.class_name}}
       </label>
     </radio-group>

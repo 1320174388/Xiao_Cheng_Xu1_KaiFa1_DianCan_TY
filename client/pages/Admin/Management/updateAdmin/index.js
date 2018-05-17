@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array:'',
+    array: [
+      { id: 1, role_name: '二级管理员' }
+    ],
     admin_value:'',
     admin_id:''
   },
@@ -20,18 +22,18 @@ Page({
     this.setData({
       'admin_value': wx.getStorageSync('value'),
     });
-    var THIS = this;
-    app.post(
-      config.service.getPositionInfo, {
-        'token': wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.retData) {
-          THIS.setData({
-            array: res.data.retData.list
-          });
-        };
-      }
-    );
+    // var THIS = this;
+    // app.post(
+    //   config.service.getPositionInfo, {
+    //     'token': wx.getStorageSync('token')
+    //   }, function (res) {
+    //     if (res.data.retData) {
+    //       THIS.setData({
+    //         array: res.data.retData.list
+    //       });
+    //     };
+    //   }
+    // );
   },
 
   /**

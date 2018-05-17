@@ -10,9 +10,22 @@ Page({
     select: false,
     selected: true,
     showModalStatus: "hide",
-    datas: null,
+    datas: [
+      { id: 1, food_img: '../../../../icon/cai1.jpg', food_name: '娃娃菜', food_sort: '1',
+        food_price:'0.1' },
+      {
+        id: 2, food_img: '../../../../icon/cai2.jpg', food_name: '鱼香肉丝', food_sort: '2',
+        food_price: '0.1' },
+      {
+        id: 3, food_img: '../../../../icon/menu.jpg', food_name: '拍黄瓜', food_sort: '3',
+        food_price: '0.1' },
+    ],
     host:null,
-    foodclass:null,
+    foodclass:[
+      { id: 1, class_name: '蔬菜', class_sort:'1'},
+      { id: 2, class_name: '热菜', class_sort: '2' },
+      { id: 3, class_name: '凉菜', class_sort: '3' },
+    ],
     foodInfo:null,
     edits:null
   },
@@ -44,29 +57,29 @@ Page({
    */
   onLoad: function (options) {
     var THIS = this;
-    app.post(
-      config.service.foods, {
-        "token": wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          THIS.setData({
-            foodclass: res.data.retData
-          })
-        }
-      }
-    );
-    app.post(
-      config.service.foodsList, {
-        "token": wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          THIS.setData({
-            host: config.service.host,
-            datas: res.data.retData
-          })
-        }
-      }
-    );
+    // app.post(
+    //   config.service.foods, {
+    //     "token": wx.getStorageSync('token')
+    //   }, function (res) {
+    //     if (res.data.errNum == 0) {
+    //       THIS.setData({
+    //         foodclass: res.data.retData
+    //       })
+    //     }
+    //   }
+    // );
+    // app.post(
+    //   config.service.foodsList, {
+    //     "token": wx.getStorageSync('token')
+    //   }, function (res) {
+    //     if (res.data.errNum == 0) {
+    //       THIS.setData({
+    //         host: config.service.host,
+    //         datas: res.data.retData
+    //       })
+    //     }
+    //   }
+    // );
   },
   /**
    * 搜索菜品

@@ -1,7 +1,7 @@
 <!--职位  -->
 
   <view>
-        <view class="list"  wx:for="{{array}}" wx:key="{{index}}">
+        <view class="list"  wx:for="{{array}}" wx:key="id">
 <form bindsubmit="addSubmit">
           <view class="left">
               <view>管理员名称：{{item.admin_name}}</view>

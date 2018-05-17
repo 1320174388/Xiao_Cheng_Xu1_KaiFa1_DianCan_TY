@@ -127,71 +127,29 @@ Page({
     }
     order_bindtap_type++;
     app.point('支付中', 'loading', 72000000);
-    var food_list_id = [];
-    var food_list_num = [];
-    var food_list_price = [];
-    var s = 0;
-    for (var i in this.data.food_info_arr.foods_crat) {
-      if (this.data.food_info_arr.foods_crat[i] !== null) {
-        food_list_id[s] = this.data.food_info_arr.foods_crat[i].id;
-        food_list_num[s] = this.data.food_info_arr.foods_crat[i].food_number;
-        food_list_price[s] = this.data.food_info_arr.foods_crat[i].food_price * this.data.food_info_arr.foods_crat[i].food_number;
-        s++;
-      }
-    }
     var This = this;
-    app.post(
-      config.wx_payment.submit_order, {
-        'token': wx.getStorageSync('token'),
-        'order_type': this.data.order_type,
-        'table_id': this.data.table_number,
-        'take_time': this.data.dates + ' ' + this.data.times,
-        'order_remarks': this.data.beizhu,
-        'food_list_id': food_list_id,
-        'food_list_num': food_list_num,
-        'food_list_price': food_list_price,
-        'order_price': this.data.food_info_arr.foods_price,
-      }, function (res) {
-        if (!res.data.errNum) {
-          var price = e.currentTarget.dataset.total_fee * 100;
-          var order_number = res.data.retData;
-          app.Payment(
-            order_number, price, function (res) {
-              // 成功
-              wx.setStorageSync("payLoser", true);
-              wx.reLaunch({
-                url: '/pages/Home/SelectionFood/payMoney/index',
-              })
-            }, function (res) {
-              // 失败
-              wx.setStorageSync("payLoser", false);
-              wx.reLaunch({
-                url: '/pages/Home/SelectionFood/payMoney/index',
-              })
-            }, function (res) {
-              var food_list_info = wx.getStorageSync('food_info_arr');
-              wx.removeStorageSync('food_info_arr');
-              wx.setStorage({
-                key: 'food_list_info',
-                data: food_list_info,
-              })
-              wx.setStorage({
-                key: 'food_list_beizhu',
-                data: This.data.beizhu,
-              })
-              wx.setStorage({
-                key: 'food_list_order_number',
-                data: order_number,
-              })
-              order_bindtap_type--;
-            }
-          );
-        } else {
-          order_bindtap_type--;
-          app.point(res.data.retMsg, 'none');
-        }
-      }
-    );
+    var order_number = myDate.getFullYear() + (myDate.getMonth() + 1) + myDate.getDate()+(myDate.getHours() + 1) + myDate.getMinutes();
+    setTimeout(function(res){
+      wx.setStorageSync("payLoser", true);
+      var food_list_info = wx.getStorageSync('food_info_arr');
+      wx.removeStorageSync('food_info_arr');
+      wx.setStorage({
+        key: 'food_list_info',
+        data: food_list_info,
+      })
+      wx.setStorage({
+        key: 'food_list_beizhu',
+        data: This.data.beizhu,
+      })
+      wx.setStorage({
+        key: 'food_list_order_number',
+        data: order_number,
+      })
+      order_bindtap_type--;
+      wx.reLaunch({
+        url: '/pages/Home/SelectionFood/payMoney/index',
+      })
+    },3000); 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

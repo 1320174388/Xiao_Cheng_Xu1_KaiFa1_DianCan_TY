@@ -8,7 +8,9 @@ Page({
   data: {
     role_id: null,
     firstPerson: '暗提示',
-    array: '',
+    array: [
+      { id: 1, role_name: '二级管理员' }
+    ],
   },
   
   /**

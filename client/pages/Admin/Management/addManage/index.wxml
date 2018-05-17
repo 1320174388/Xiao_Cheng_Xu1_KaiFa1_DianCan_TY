@@ -19,7 +19,7 @@
   </view>
   <view class="choose">
       <radio-group class="radio-group" bindchange="radioChange" name="role_id">
-           <view wx:for="{{array}}" wx:key="{{index}}"  class="chooseText">
+           <view wx:for="{{array}}" wx:key="id"  class="chooseText">
                 <view>
                     <text bindtap="mySelect" data-me="{{item.role_name}}">
                               {{item.role_name}}</text>

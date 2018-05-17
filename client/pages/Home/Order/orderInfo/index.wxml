@@ -1,7 +1,7 @@
  <view  class="pow">
         <text class="pow-tx">订单信息</text>
         <!-- 菜品名称 -->
-        <view wx:for="{{order_info}}" wx:key="{{index}}" class="tunne2">
+        <view wx:for="{{order_info}}" wx:key="oid" class="tunne2">
               <view class="tunnel-text2 uploader-text2">
                   <image src='{{host}}{{item.food_img}}'></image>
                   <text class="menu">{{item.food_name}}</text>

@@ -9,7 +9,10 @@ Page({
   data: {
     selectPerson: true,
     selectArea: false,
-    array:'',
+    array: [
+      { id: 1, right_name: '店铺管理' },
+      { id: 2, right_name: '菜品管理' },
+    ],
     arrayList: null,
     update_value:'',
   },
@@ -18,18 +21,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var THIS = this
-    app.post(
-      config.service.position, {
-        'token': wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.retData) {
-          THIS.setData({
-            array: res.data.retData.list
-          });
-        };
-      }
-    );
+    // var THIS = this
+    // app.post(
+    //   config.service.position, {
+    //     'token': wx.getStorageSync('token')
+    //   }, function (res) {
+    //     if (res.data.retData) {
+    //       THIS.setData({
+    //         array: res.data.retData.list
+    //       });
+    //     };
+    //   }
+    // );
   },
 
   /**

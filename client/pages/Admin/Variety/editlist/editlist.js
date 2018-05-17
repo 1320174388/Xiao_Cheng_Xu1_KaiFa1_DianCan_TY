@@ -10,7 +10,11 @@ Page({
     productInfo: {},
     image_url: null,
     image_true:null,
-    classlist:null,
+    classlist: [
+      { id: 1, class_name: '蔬菜' },
+      { id: 2, class_name: '热菜' },
+      { id: 1, class_name: '凉菜' },
+    ],
     editfoods:''
   },
   // 表单提交事件
@@ -73,18 +77,18 @@ Page({
       editfoods: wx.getStorageSync('editfoods'),
       image_url: config.service.host + wx.getStorageSync('editfoods').food_img
     });
-    var This = this;
-    app.post(
-      config.service.foods, {
-        "token": wx.getStorageSync('token'),
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          This.setData({
-            classlist: res.data.retData
-          });
-        };
-      }
-    );
+    // var This = this;
+    // app.post(
+    //   config.service.foods, {
+    //     "token": wx.getStorageSync('token'),
+    //   }, function (res) {
+    //     if (res.data.errNum == 0) {
+    //       This.setData({
+    //         classlist: res.data.retData
+    //       });
+    //     };
+    //   }
+    // );
   },
   // 图片上传代码
   image: function () {

@@ -56,7 +56,7 @@
                 <view class="weui-cells__title">
                   <view wx:for="{{item.food_info}}" wx:for-item="items" wx:key="index" class='food-list'>
                     <view class='dianji' data-food_info="{{items}}" data-index="{{index}}" bindtap='single'>
-                      <image src='{{host}}{{items.food_img}}' class='food-img'></image>
+                      <image src='{{items.food_img}}' class='food-img'></image>
                       <view  class='context-name'>
                         <text>{{items.food_name}}</text>
                       </view>

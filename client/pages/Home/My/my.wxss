@@ -54,12 +54,8 @@
 } 
 /* 点餐 */
 .imgdiancan{
-  border-radius:77rpx;
-  background-color: #f5a623;
   margin-left:54rpx;
   margin-top:29rpx;
-  width:77rpx;
-  height:77rpx;
 }
  .img{
   width:49rpx;
@@ -67,10 +63,22 @@
   padding-left: 14.5rpx;
   padding-top:15rpx; 
 }
+ .shouyeimg{
+  width:77rpx;
+  height:77rpx;
+}
 .context-diancan{
   font-family: PingFangSC;
   font-size: 28rpx;
   line-height: 60rpx;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+.context-shouye{
+  font-family: PingFangSC;
+  font-size: 28rpx;
+  line-height: 45rpx;
   letter-spacing: normal;
   text-align: center;
   color: #000000;

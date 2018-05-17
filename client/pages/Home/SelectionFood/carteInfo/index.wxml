@@ -1,5 +1,5 @@
 <view class="page">
-  <image src='{{host}}{{food_info.food_img}}' class='carte'></image>
+  <image src='{{food_info.food_img}}' class='carte'></image>
   <view class='carte-info'>
     <view class='carte-name'><text>{{food_info.food_name}}</text></view>
     <view class='carte-price'><text>￥{{food_info.food_price}}</text></view>

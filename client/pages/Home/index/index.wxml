@@ -1,9 +1,9 @@
 
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+  <block wx:for="{{imgUrls}}" wx:key="sid">
     <swiper-item>
-      <image src="{{host}}{{item.shop_img}}" class="slide-image"/>
+      <image src="{{item.src}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
@@ -33,37 +33,37 @@
     <!-- 菜品图片列表 -->
     <view class='proList'>
       <view class="lists" bindtap='imgOrder'>
-          <image src='{{imghost}}/cai1.jpg'></image>
+          <image src='../../../icon/cai1.jpg'></image>
           <text class='lists-name'>巧扮苦菊</text>
           <text class='lists-pric'>￥12.00</text>
       </view>
 
       <view class="lists">
-        <image src='{{imghost}}/cai1.jpg'></image>
+        <image src='../../../icon/cai1.jpg'></image>
         <text class='lists-name'>巧扮苦菊</text>
         <text class='lists-pric'>￥12.00</text>
       </view>
 
       <view class="lists">
-        <image src='{{imghost}}/cai1.jpg'></image>
+        <image src='../../../icon/cai1.jpg'></image>
         <text class='lists-name'>巧扮苦菊</text>
         <text class='lists-pric'>￥12.00</text>
        </view>
 
       <view class="lists">
-        <image src='{{imghost}}/cai1.jpg'></image>
+        <image src='../../../icon/cai1.jpg'></image>
         <text class='lists-name'>巧扮苦菊</text>
         <text class='lists-pric'>￥12.00</text>
        </view>
 
       <view class="lists">
-        <image src='{{imghost}}/cai1.jpg'></image>
+        <image src='../../../icon/cai1.jpg'></image>
         <text class='lists-name'>巧扮苦菊</text>
         <text class='lists-pric'>￥12.00</text>
       </view>
 
        <view class="lists">
-        <image src='{{imghost}}/cai1.jpg'></image>
+        <image src='../../../icon/cai1.jpg'></image>
         <text class='lists-name'>巧扮苦菊</text>
         <text class='lists-pric'>￥12.00</text>
       </view>

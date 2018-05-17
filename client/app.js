@@ -116,12 +116,12 @@ App({
     }
   },
   // 计算购物车总价格及数量
-  orderCrat:function (arr,typeString) {
-    if (typeString == 'price'){
+  orderCrat: function (arr, typeString) {
+    if (typeString == 'price') {
       var price = 0;
-      for (var i in arr){
+      for (var i in arr) {
         if (arr[i]) {
-          price += (parseFloat(arr[i].food_price) * parseFloat(arr[i].food_number));
+          price += (((parseFloat(arr[i].food_price) * 100) * parseFloat(arr[i].food_number))) / 100;
         }
       }
       return price;
@@ -137,41 +137,41 @@ App({
     }
   }
 });
-login_add();
+// login_add();
 // 用户登录信息
-function login_add(number = 1) {
-  if (number == 1) {
-    wx.removeStorageSync('token');
-    number++;
-  }
-  setInterval(function () {
-    if (wx.getStorageSync('token')) {
-      return false;
-    }
-    setTimeout(function (res) {
-      wx.removeStorageSync('token');
-    }, 3600000);
-    wx.login({
-      success: function (res) {
-        if (res.code) {
-          wx.request({
-            url: config.service.cheshiUrl,
-            data: {
-              code: res.code
-            },
-            header: {
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            method: 'post',
-            success: function (res) {
-              console.log(res.data);
-              wx.setStorageSync('token', res.data.retData.token);
-            }
-          });
-        } else {
-          console.log('登录失败' + res.errMsg);
-        };
-      }
-    });
-  }, 500);
-};
+// function login_add(number = 1) {
+//   if (number == 1) {
+//     wx.removeStorageSync('token');
+//     number++;
+//   }
+//   setInterval(function () {
+//     if (wx.getStorageSync('token')) {
+//       return false;
+//     }
+//     setTimeout(function (res) {
+//       wx.removeStorageSync('token');
+//     }, 3600000);
+//     wx.login({
+//       success: function (res) {
+//         if (res.code) {
+//           wx.request({
+//             url: config.service.cheshiUrl,
+//             data: {
+//               code: res.code
+//             },
+//             header: {
+//               'content-type': 'application/x-www-form-urlencoded'
+//             },
+//             method: 'post',
+//             success: function (res) {
+//               console.log(res.data);
+//               wx.setStorageSync('token', res.data.retData.token);
+//             }
+//           });
+//         } else {
+//           console.log('登录失败' + res.errMsg);
+//         };
+//       }
+//     });
+//   }, 500);
+// };

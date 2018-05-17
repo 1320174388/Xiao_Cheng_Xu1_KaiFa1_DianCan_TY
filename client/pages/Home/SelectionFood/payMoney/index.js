@@ -32,43 +32,10 @@ Page({
     }),
       wx.removeStorageSync('payLoser');
   },
-  // 立即支付
-  hurrypay: function () {
-    var order_number = wx.getStorageSync('food_list_order_number');
-    var price = this.data.food_list_info.foods_price * 100;
-    var This = this;
-    order_bindtap_type++;
-    app.point('支付中', 'loading', 7200);
-    app.Payment(
-      order_number, price, function (res) {
-        // 成功
-        wx.setStorageSync("payLoser", true);
-        This.onLoad();
-      }, function (res) {
-        // 失败
-        wx.setStorageSync("payLoser", false);
-        This.onLoad();
-      }, function (res) {
-        wx.setStorage({
-          key: 'food_list_info',
-          data: This.data.food_list_info,
-        })
-        wx.setStorage({
-          key: 'food_list_beizhu',
-          data: This.data.food_list_beizhu,
-        })
-        wx.setStorage({
-          key: 'food_list_order_number',
-          data: This.data.food_list_order_number,
-        })
-        order_bindtap_type--;
-      }
-    );
-  },
   // 继续点餐
   playon: function () {
     wx.switchTab({
-      url: '/pages/Home/OrderFood/orderMenu/index',
+      url: '/pages/Home/SelectionFood/orderMenu/index',
     })
   },
 

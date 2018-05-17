@@ -3,30 +3,30 @@
     <text data-y="y" class='{{select ? "changes" : "unchanges"}}' bindtap="select">座号管理</text>
 </view>
 <form bindsubmit="edits">
-  <view class='{{selected ? "show" : "hide" }}' id='shop'>
+  <view class='{{selected ? "show" : "hide" }}' wx:key='id' wx:for="{{shop}}">
       <view class='list'>
             <text class='key'>店铺名称</text>
-            <text class='value'>{{shop.shop_name}}</text>
+            <text class='value'>{{item.shop_name}}</text>
             <input hidden name="shop_id" value="{{shop.id}}" ></input>
             <input hidden name="shop_name" value="{{shop.shop_name}}" ></input>
       </view>
       <view class='list'>
             <text class='key'>店铺地址</text>
-            <text class='value'>{{shop.shop_addr}}</text>
+            <text class='value'>{{item.shop_addr}}</text>
             <input hidden name="shop_addr" value="{{shop.shop_addr}}" ></input>
       </view>
       <view class='list'>
             <text class='key'>电话</text>
-            <text class='value'>{{shop.shop_phone}}</text>
+            <text class='value'>{{item.shop_phone}}</text>
             <input hidden name="shop_phone" value="{{shop.shop_phone}}" ></input>
       </view>
       <view class='list'>
             <text class='key'>介绍</text>
-            <text class='values'>{{shop.shop_info}}</text>
+            <text class='values'>{{item.shop_info}}</text>
             <input hidden name="shop_info" value="{{shop.shop_info}}" ></input>
       </view>
       <view class='pic'>
-          <image  wx:for="{{img_url}}" wx:key='{{index}}' src='{{host}}{{item.shop_img}}'></image>
+          <image  wx:for="{{img_url}}" wx:key='sid' src='{{item.shop_img}}'></image>
           <input hidden name="shop_img" value="{{img_url}}" ></input>
       </view>
       <button formType="submit">修改</button>

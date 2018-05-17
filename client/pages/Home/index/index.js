@@ -3,23 +3,27 @@ var app = getApp();
 Page({
   data: {
     host:config.index.host,
-    imgUrls: null,
+    // imgUrls: null,
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    imghost: config.service.imghost
+    imgUrls: [
+      { sid: 1, src: '../../../icon/lun1.png' },
+      { sid: 2, src: '../../../icon/menu.jpg' },
+      { sid: 3, src: '../../../icon/lun1.png' }
+    ],
   },
   onLoad: function () {
-    var This = this;
-    app.post(
-      config.index.git_sowing_map, {
-      }, function (res) {
-        This.setData({
-          imgUrls: res.data.retData
-        });
-      }
-    );
+    // var This = this;
+    // app.post(
+    //   config.index.git_sowing_map, {
+    //   }, function (res) {
+    //     This.setData({
+    //       imgUrls: res.data.retData
+    //     });
+    //   }
+    // );
   },
   tell:function(){
     wx.makePhoneCall({

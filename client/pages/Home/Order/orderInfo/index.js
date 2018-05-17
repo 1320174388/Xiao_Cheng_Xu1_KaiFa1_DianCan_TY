@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    order_info: [
+      {
+        oid: 1, food_img: '../../../../icon/cai1.jpg', food_name: '鱼香肉丝', 
+        food_number: '1', order_price:'0.1' },
+    ],
+    order_num:1,
+    order_print:0.1,
   },
 
   /**

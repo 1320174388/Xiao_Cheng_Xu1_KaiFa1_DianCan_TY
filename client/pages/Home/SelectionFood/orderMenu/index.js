@@ -22,7 +22,145 @@ Page({
       { sid: 3, title: '新品即将来袭，你准备好了吗？' }
     ],
     // 导航条
-    navbar: null,
+    navbar: [
+      {
+        "id": "1",
+        "class_name": "蔬菜",
+        "food_info": [
+          {
+            "id": "1",
+            "food_name": "大白菜",
+            "class_id": "1",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": 0.2,
+            "food_info": "sddddsds"
+          },
+          {
+            "id": "9",
+            "food_name": "test1",
+            "class_id": "1",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "4",
+            "food_info": "二"
+          },
+          {
+            "id": "20",
+            "food_name": "asdasd",
+            "class_id": "1",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "123",
+            "food_info": "123123"
+          },
+          {
+            "id": "21",
+            "food_name": "5456456",
+            "class_id": "1",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "6456",
+            "food_info": "6456456456"
+          },
+          {
+            "id": "22",
+            "food_name": "油麦菜",
+            "class_id": "1",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "21",
+            "food_info": "绿绿的"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "class_name": "热菜",
+        "food_info": [
+          {
+            "id": "19",
+            "food_name": "白菜",
+            "class_id": "5",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "12",
+            "food_info": "白白的"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "class_name": "冷菜",
+        "food_info": [
+          {
+            "id": "30",
+            "food_name": "白菜",
+            "class_id": "4",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "12",
+            "food_info": "白白的"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "class_name": "主食",
+        "food_info": [
+          {
+            "id": "31",
+            "food_name": "白菜",
+            "class_id": "6",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "12",
+            "food_info": "白白的"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "class_name": "甜点",
+        "food_info": [
+          {
+            "id": "32",
+            "food_name": "白菜",
+            "class_id": "7",
+            "food_img": "../../../../icon/cai1.jpg",
+            "food_price": "12",
+            "food_info": "白白的"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "class_name": "凉菜",
+        "food_info": []
+      },
+      {
+        "id": "9",
+        "class_name": "荤菜",
+        "food_info": []
+      },
+      {
+        "id": "10",
+        "class_name": "酒水",
+        "food_info": []
+      },
+      {
+        "id": "11",
+        "class_name": "火锅",
+        "food_info": []
+      },
+      {
+        "id": "12",
+        "class_name": "川菜",
+        "food_info": []
+      },
+      {
+        "id": "13",
+        "class_name": "湘菜",
+        "food_info": []
+      },
+      {
+        "id": "14",
+        "class_name": "徽菜",
+        "food_info": []
+      }
+    ],
     host: config.service.host,
     key2: null,
     food_info_arr: null,
@@ -133,13 +271,13 @@ Page({
         food_info_arr: wx.getStorageSync('food_info_arr'),
       });
     }, 500);
-    app.post(
-      config.order_class_food.get_class_food, {}, function (res) {
-        This.setData({
-          navbar: res.data.retData
-        });
-      }
-    );
+    // app.post(
+    //   config.order_class_food.get_class_food, {}, function (res) {
+    //     This.setData({
+    //       navbar: res.data.retData
+    //     });
+    //   }
+    // );
   },
 
   /**

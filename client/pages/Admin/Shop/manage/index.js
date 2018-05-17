@@ -10,7 +10,10 @@ Page({
    */
   data: {
     host:null,
-    shop:null,
+    shop:[
+      { id: 1, shop_name: '半山妖快餐店', shop_addr: '中国大陆', shop_phone:'1005440',
+        shop_info:'半山妖快餐店,中国唯一牛逼快餐店'}
+      ],
     select:false,
     selected:true,
     pic:"/icon/desk.jpg",
@@ -18,7 +21,14 @@ Page({
     table_id:null,
     showModalStatus: "hide",
     shoopCode:null,
-    img_url:null
+    img_url: [
+      { sid: 1, shop_img: '../../../../icon/1.jpg'},
+      { sid: 1, shop_img: '../../../../icon/2.jpg' },
+      { sid: 1, shop_img: '../../../../icon/3.jpg' },
+      { sid: 1, shop_img: '../../../../icon/3.jpg' },
+      { sid: 1, shop_img: '../../../../icon/1.jpg' },
+      { sid: 1, shop_img: '../../../../icon/2.jpg' },
+    ],
   },
   /**
      * 弹出层函数
@@ -61,8 +71,8 @@ Page({
         if (res.data.errNum == 1) {
           THIS.setData({
             host: config.service.host,
-            shop: res.data.retData.shop,
-            img_url: res.data.retData.img_url,
+            // shop: res.data.retData.shop,
+            // img_url: res.data.retData.img_url,
           });
         }
       }

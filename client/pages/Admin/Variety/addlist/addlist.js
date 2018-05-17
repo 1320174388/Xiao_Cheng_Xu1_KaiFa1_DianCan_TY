@@ -9,25 +9,29 @@ Page({
   data: {
     productInfo: {},
     image_url: '/icon/uppic.png',
-    classlist:null
+    classlist:[
+      { id: 1, class_name:'蔬菜'},
+      { id: 2, class_name: '热菜' },
+      { id: 1, class_name: '凉菜' },
+      ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var This = this;
-    app.post(
-      config.service.foods, {
-        "token": wx.getStorageSync('token'),
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          This.setData({
-            classlist: res.data.retData
-          });
-        }
-      }
-    );
+    // var This = this;
+    // app.post(
+    //   config.service.foods, {
+    //     "token": wx.getStorageSync('token'),
+    //   }, function (res) {
+    //     if (res.data.errNum == 0) {
+    //       This.setData({
+    //         classlist: res.data.retData
+    //       });
+    //     }
+    //   }
+    // );
   },
 
   /**
