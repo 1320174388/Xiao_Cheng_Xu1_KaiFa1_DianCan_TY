@@ -13,6 +13,17 @@ Page({
       { sid: 2, src: '../../../icon/menu.jpg' },
       { sid: 3, src: '../../../icon/lun1.png' }
     ],
+    tuijian:[
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img:'../../../icon/cai1.jpg'},
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' }
+    ],
   },
   onLoad: function () {
     // var This = this;

@@ -32,40 +32,10 @@
     </view>
     <!-- 菜品图片列表 -->
     <view class='proList'>
-      <view class="lists" bindtap='imgOrder'>
-          <image src='../../../icon/cai1.jpg'></image>
-          <text class='lists-name'>巧扮苦菊</text>
-          <text class='lists-pric'>￥12.00</text>
-      </view>
-
-      <view class="lists">
-        <image src='../../../icon/cai1.jpg'></image>
-        <text class='lists-name'>巧扮苦菊</text>
-        <text class='lists-pric'>￥12.00</text>
-      </view>
-
-      <view class="lists">
-        <image src='../../../icon/cai1.jpg'></image>
-        <text class='lists-name'>巧扮苦菊</text>
-        <text class='lists-pric'>￥12.00</text>
-       </view>
-
-      <view class="lists">
-        <image src='../../../icon/cai1.jpg'></image>
-        <text class='lists-name'>巧扮苦菊</text>
-        <text class='lists-pric'>￥12.00</text>
-       </view>
-
-      <view class="lists">
-        <image src='../../../icon/cai1.jpg'></image>
-        <text class='lists-name'>巧扮苦菊</text>
-        <text class='lists-pric'>￥12.00</text>
-      </view>
-
-       <view class="lists">
-        <image src='../../../icon/cai1.jpg'></image>
-        <text class='lists-name'>巧扮苦菊</text>
-        <text class='lists-pric'>￥12.00</text>
+      <view wx:for="{{tuijian}}" wx:key="{{index}}" class="lists" bindtap='imgOrder'>
+          <image src='{{item.food_img}}'></image>
+          <text class='lists-name'>{{item.food_name}}</text>
+          <text class='lists-pric'>￥{{item.food_price}}</text>
       </view>
     </view>
   </view>
