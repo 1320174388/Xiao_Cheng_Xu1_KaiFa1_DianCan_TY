@@ -69,21 +69,15 @@ Page({
   
   },
   formSubmit(e){
-    app.post(
-      config.service.editMenu, {
-        "token": wx.getStorageSync('token'),
-        "class_id": e.detail.value.class_id,
-        "class_name": e.detail.value.class_name,
-        "class_sort": e.detail.value.class_sort
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          wx.removeStorageSync('key')
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    var update_foodclass = e.detail.value;
+    var id = wx.getStorageSync('id');
+    var class_name = update_foodclass.class_name;
+    var class_sort = update_foodclass.class_sort;
+    var foodclass = wx.getStorageSync('foodclass');
+    foodclass[id].class_name = class_name;
+    foodclass[id].class_sort = class_sort;
+    wx.setStorageSync('foodclass', foodclass);
+    app.point('修改成功', "success");
+    app.timeBack(2000);
   }
 })

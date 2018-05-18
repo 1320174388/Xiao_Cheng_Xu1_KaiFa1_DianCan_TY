@@ -80,8 +80,6 @@ Page({
     var roleName = e.detail.value.roleName;
     var right = e.detail.value;
     delete right['roleName'];
-    var right = e.detail.value;
-    delete right['roleName'];
     var assync_c = 0;
     for (var key in right) {
       if (right[key] == true) {

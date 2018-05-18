@@ -65,20 +65,15 @@ Page({
   onShareAppMessage: function () {
   
   },
+  // 添加菜品分类
   formSubmit:function(e){
-    app.post(
-      config.service.addMenu, {
-        "token": wx.getStorageSync('token'),
-        "class_name": e.detail.value.class_name,
-        "class_sort": e.detail.value.class_sort
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      }
-    );
+    var class_name = e.detail.value.class_name;
+    var class_sort = e.detail.value.class_sort;
+    var foodclass = wx.getStorageSync('foodclass');
+    foodclass[foodclass.length] = { class_name: class_name, class_sort: class_sort };
+    wx.setStorageSync('foodclass', foodclass);
+    wx.removeStorageSync('value');
+    app.point('添加成功', "success");
+    app.timeBack(2000);
   }
 })

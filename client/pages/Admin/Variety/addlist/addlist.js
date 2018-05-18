@@ -20,18 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var This = this;
-    // app.post(
-    //   config.service.foods, {
-    //     "token": wx.getStorageSync('token'),
-    //   }, function (res) {
-    //     if (res.data.errNum == 0) {
-    //       This.setData({
-    //         classlist: res.data.retData
-    //       });
-    //     }
-    //   }
-    // );
+   
   },
 
   /**
@@ -50,28 +39,22 @@ Page({
    * 添加菜品
    */
   formSubmit: function (e) {
+    console.log(e);
     var This = this;
-    app.point("上传中", "loading",360000);
-    app.file(
-      config.foods.create,
-      This.data.image_url,
-      "food_img", {
-        "token": wx.getStorageSync('token'),
-        "food_name": e.detail.value.food_name,
-        "class_id": e.detail.value.class_id,
-        "food_price": e.detail.value.food_price,
-        "food_sort": e.detail.value.food_sort,
-        "food_info": e.detail.value.food_info,
-      }, function (res) {
-        var data = JSON.parse(res.data);
-        if (data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      },
-    );
+    This.data.image_url;
+    var class_id = e.detail.value.class_id;
+    var food_info = e.detail.value.food_info;
+    var food_name = e.detail.value.food_name;
+    var food_price = e.detail.value.food_price;
+    var food_sort = e.detail.value.food_sort;
+    var food_img = This.data.image_url;
+    var datas = wx.getStorageSync('datas');
+    datas[datas.length] = { class_id: class_id, food_info: food_info, food_name: food_name,
+    food_price: food_price, food_sort: food_sort, food_img: food_img};
+    wx.setStorageSync('datas', datas);
+    wx.removeStorageSync('value');
+    app.point('添加成功', "success");
+    app.timeBack(2000);
   },
 
   /**

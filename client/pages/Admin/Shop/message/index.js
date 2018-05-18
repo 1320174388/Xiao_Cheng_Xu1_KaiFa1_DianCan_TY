@@ -10,7 +10,7 @@ Page({
     host: config.service.host,
     shop_value:null,
     image_url:null,
-    image_true:false
+    image_true:false,
   },
 
   /**
@@ -41,62 +41,35 @@ Page({
           var num = 1;
           var length = res.tempFilePaths.length;
           var tempFilePaths = res.tempFilePaths;
-          appFile(i, num, length, tempFilePaths);
-          function appFile(i, num, length, tempFilePaths){
-            app.point("第" + num + "张图片上传中", "loading", 360000);
-            app.file(
-              config.shop.create_img,
-              res.tempFilePaths[i],
-              "shop_img", {
-                "token": wx.getStorageSync('token'),
-                "img_num": num
-              }, function (res) {
-                var data = JSON.parse(res.data);
-                if (data.errNum == 0) {
-                  app.point(data.retMsg, "success");
-                  i++;
-                  num++;
-                  if (num <= length) {
-                    appFile(i, num, length, tempFilePaths);
-                  }else{
-                    var image_urls = [];
-                    for (var n = 0; n < tempFilePaths.length;n++) {
-                      image_urls[n] = [];
-                      image_urls[n] = {
-                        'shop_img':tempFilePaths[n]
-                      }
-                    }
-                    THIS.setData({
-                      image_url: image_urls
-                    });
-                  }
-                }
-              },
-            );
+          var image_urls = [];
+          for (var n = 0; n < tempFilePaths.length; n++) {
+            image_urls[n] = [];
+            image_urls[n] = {
+              sid:n+1,
+              'shop_img': tempFilePaths[n]
+            }
           }
+          wx.setStorageSync('img_url', image_urls);
+          THIS.setData({
+            image_url: image_urls
+          });   
         }
       }
     })
   },
   formSubmit:function(e){
-    var This = this;
-    app.post(
-      config.shop.update, {
-        "token": wx.getStorageSync('token'),
-        "id": e.detail.value.shop_id,
-        "shop_name": e.detail.value.shop_name,
-        "shop_info": e.detail.value.shop_info,
-        "shop_addr": e.detail.value.shop_addr,
-        "shop_phone": e.detail.value.shop_phone
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      }
-    );
+    var shop_value = e.detail.value;
+    var shop_id = shop_value.shop_id;
+    var shop_name = shop_value.shop_name;
+    var shop_info = shop_value.shop_info;
+    var shop_addr = shop_value.shop_addr;
+    var shop_phone = shop_value.shop_phone;
+    var shop = wx.getStorageSync('shop');
+    shop[shop_id] = { id: shop_id, shop_name: shop_name, shop_info: shop_info, 
+                      shop_addr:shop_addr, shop_phone: shop_phone};
+    wx.setStorageSync('shop', shop);
+    app.point('修改成功', "success");
+    app.timeBack(2000);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

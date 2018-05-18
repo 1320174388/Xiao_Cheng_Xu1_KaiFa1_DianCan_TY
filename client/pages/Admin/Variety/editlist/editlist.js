@@ -21,51 +21,42 @@ Page({
   formSubmit:function(e){
     var This = this;
     if (this.data.image_true) {
-      app.point("上传中", "loading", 360000);
-      app.file(
-        config.foods.update,
-        This.data.image_url,
-        "food_img", {
-          "token": wx.getStorageSync('token'),
-          "id": e.detail.value.id,
-          "food_name": e.detail.value.food_name,
-          "class_id": e.detail.value.class_id,
-          "food_price": e.detail.value.food_price,
-          "food_sort": e.detail.value.food_sort,
-          "food_info": e.detail.value.food_info,
-          "food_img_true": 1
-        }, function (res) {
-          console.log(res.data);
-          var data = JSON.parse(res.data);
-          if (data.errNum == 0) {
-            wx.removeStorageSync('editfoods');
-            app.point(res.data.retMsg, "success");
-            app.timeBack(1000);
-          } else {
-            app.point(res.data.retMsg, "none");
-          };
-        },
-      );
-    }else{ //没有传入图片
-      app.post(
-        config.foods.update, {
-          "token": wx.getStorageSync('token'),
-          "id": e.detail.value.id,
-          "food_name": e.detail.value.food_name,
-          "class_id": e.detail.value.class_id,
-          "food_price": e.detail.value.food_price,
-          "food_sort": e.detail.value.food_sort,
-          "food_info": e.detail.value.food_info,
-        }, function (res) {
-          if (res.data.errNum == 0) {
-            wx.removeStorageSync('editfoods');
-            app.point(res.data.retMsg, "success");
-            app.timeBack(1000);
-          } else{
-            app.point(res.data.retMsg, "none");
-          };
-        }
-      );
+        This.data.image_url;
+        var update_datas = e.detail.value;
+        var index_id = wx.getStorageSync('index_id');
+        var class_id = update_datas.class_id;
+        var food_info = update_datas.food_info;
+        var food_name = update_datas.food_name;
+        var food_price = update_datas.food_price;
+        var food_sort = update_datas.food_sort;
+        var id = update_datas.id;
+        var food_img = This.data.image_url;
+        var datas = wx.getStorageSync('datas');
+        datas[index_id] = {
+          class_id: class_id, food_info: food_info, food_name: food_name, food_price: food_price,
+          food_sort: food_sort, id: id, food_img: food_img
+        };
+        wx.setStorageSync('datas', datas);
+        app.point('修改成功', "success");
+        app.timeBack(2000);
+    }else{ 
+      //没有传入图片
+      var update_datas = e.detail.value;
+      var index_id = wx.getStorageSync('index_id');
+      var class_id = update_datas.class_id;
+      var food_info = update_datas.food_info;
+      var food_name = update_datas.food_name;
+      var food_price = update_datas.food_price;
+      var food_sort = update_datas.food_sort;
+      var id = update_datas.id;
+      var datas = wx.getStorageSync('datas');
+      datas[index_id] = {
+        class_id: class_id, food_info: food_info, food_name: food_name, food_price: food_price,
+        food_sort: food_sort, id: id
+      };
+      wx.setStorageSync('datas', datas);
+      app.point('修改成功', "success");
+      app.timeBack(2000);
     }
   },
 

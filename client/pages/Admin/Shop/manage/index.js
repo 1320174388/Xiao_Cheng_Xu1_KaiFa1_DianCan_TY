@@ -10,25 +10,15 @@ Page({
    */
   data: {
     host:null,
-    shop:[
-      { id: 1, shop_name: '半山妖快餐店', shop_addr: '中国大陆', shop_phone:'1005440',
-        shop_info:'半山妖快餐店,中国唯一牛逼快餐店'}
-      ],
     select:false,
     selected:true,
-    pic:"/icon/desk.jpg",
     desk:null,
+    shop:null,
     table_id:null,
     showModalStatus: "hide",
     shoopCode:null,
-    img_url: [
-      { sid: 1, shop_img: '../../../../icon/1.jpg'},
-      { sid: 1, shop_img: '../../../../icon/2.jpg' },
-      { sid: 1, shop_img: '../../../../icon/3.jpg' },
-      { sid: 1, shop_img: '../../../../icon/3.jpg' },
-      { sid: 1, shop_img: '../../../../icon/1.jpg' },
-      { sid: 1, shop_img: '../../../../icon/2.jpg' },
-    ],
+    img_url: wx.getStorageSync('img_url'),
+    shoopCode: "../../../../icon/201634153158007.jpg" ,
   },
   /**
      * 弹出层函数
@@ -63,82 +53,50 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var THIS = this;
-    app.post(
-      config.service.shoppings, {
-        "token": wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.errNum == 1) {
-          THIS.setData({
-            host: config.service.host,
-            // shop: res.data.retData.shop,
-            // img_url: res.data.retData.img_url,
+    //店铺信息
+    this.setData({
+      shop: wx.getStorageSync('shop')
+    });
+    // 座号管理
+    var desks = wx.getStorageSync('desk');
+      for (var i in desks) {
+        desks[i]['hidden'] = true;
+      }
+      this.setData({
+        desk: desks,
+      });
+      //图片
+      var This = this;
+      setInterval(function(res){
+        if (This.data.img_url != wx.getStorageSync('img_url')) {
+          This.setData({
+            img_url: wx.getStorageSync('img_url'),
           });
         }
-      }
-    );
-    app.post(
-      config.shop.get_tables, {
-        "token": wx.getStorageSync('token')
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          for (var i in res.data.retData){
-            res.data.retData[i]['hidden'] = true;
-          }
-          THIS.setData({
-            desk: res.data.retData
-          });
-        }
-      }
-    );
+      },500);
+      
   },
 
 //修改座号
   hideup: function (e) {
-    console.log(e.currentTarget.dataset);
+    console.log(e);
     wx.setStorageSync('table_info', e.currentTarget.dataset);
     app.baseUrl('/pages/Admin/Shop/seatupdate/index');
   },
 // 删除座号
   hidedel: function (e) {
-    var del = this;
-    app.post(
-      config.shop.del_tables, {
-        'token': wx.getStorageSync('token'),
-        'table_id': e.currentTarget.dataset.editid
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          setTimeout(function () {
-            del.onLoad(); 
-          }, 3000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    var deldesk=this.data.desk;
+    delete deldesk[e.currentTarget.dataset.editid];
+    wx.setStorageSync('desk', deldesk);
+    this.onLoad();
+    
   },
 // 二维码
   tap:function(e){
-    if(a==0){
-      var This = this;
-      app.post(
-        config.shop.qr_code, {
-          "token": wx.getStorageSync('token'),
-          "table_number": e.currentTarget.dataset.table_number
-        }, function (res) {
-          if (res.data.errNum == 0) {
-            setTimeout(function () {
-              This.setData({
-                host: config.service.host,
-                shoopCode: res.data.retData.img,
-                showModalStatus: "show"
-              })
-            }, 1000)
-          }
-        }
-      );
-    }
+    this.setData({
+      showModalStatus: "show"
+    })
+   
   },
   close: function () {
     this.setData({
@@ -206,13 +164,17 @@ Page({
         })
      }
   },
+  // 修改店铺信息
   edits:function(e){
     wx.setStorageSync('shop_value',e.detail.value);
+    var shop_img = this.data.img_url;
     wx.setStorageSync('shop_img', this.data.img_url);
+    console.log(this.data.img_url);
     wx.navigateTo({
       url: '/pages/Admin/Shop/message/index'
     })
   },
+  // 添加桌号
   seats:function(){
     wx.navigateTo({
       url: '/pages/Admin/Shop/seat/index',

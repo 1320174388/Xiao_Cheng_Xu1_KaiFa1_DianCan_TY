@@ -8,45 +8,12 @@ Page({
    */
   data: {
     // 订单管理导航条
-    navbar: ['就餐', '点餐', '预定', '历史'],
+    navbar: ['就餐', '点餐' , '历史'],
     currentTab: 0,
-    orderlist:
-    [
-      { id: 1, order_number: '20180514205402202306864', order_status:1,
-        user_id: '2', order_remarks: 'null', table_id: '3号桌', order_time:'20180514 20:54'},
-      {
-        id: 2, order_number: '20180514205402202306864', order_status: 1,
-        user_id: '2', order_remarks: 'null', table_id: '3号桌', order_time: '20180514 20:54'
-      },
-      ]
-      ,
-    ordertake: 
-    [
-      {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
-        user_id: '2', order_remarks: 'null', order_addr: '大西北',
-        order_time: '20180514 20:54'
-      }
-    ]
-    ,
-    orderhist:
-    [
-      {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
-        user_id: '2', order_remarks: 'null', order_type:'out',
-        order_time: '20180514 20:54'
-      }
-    ]
-    ,
-    orderqucan:
-    [
-      {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
-        user_id: '2', order_remarks: 'null', take_time: '2018-05-17 15:20',
-        order_time: '20180514 20:54'
-      }
-    ]
-   , 
+    orderlist:null,
+    ordertake:null,
+    orderhist:null,
+    orderqucan:null, 
   },
   // 获取订单详情信息
   orderinfo:function(e){
@@ -73,62 +40,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var THIS = this;
-    //获取就餐订单
-    // app.post(
-    //   config.order.orderList, {
-    //     'token': wx.getStorageSync('token'),
-    //     'order_type': 'eat',
-    //     'order_status': 1,
-    //   }, function (res) {
-    //     if (res.data.errNum == 1) {
-    //       THIS.setData({
-    //         orderlist: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
-    // 获取取餐订单
-    // app.post(
-    //   config.order.orderList, {
-    //     'token': wx.getStorageSync('token'),
-    //     'order_type': 'take',
-    //     'order_status': 1,
-    //   }, function (res) {
-    //     if (res.data.errNum == 1) {
-    //       THIS.setData({
-    //         orderqucan: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
-    // 获取外卖订单
-    // app.post(
-    //   config.order.orderList, {
-    //     'token': wx.getStorageSync('token'),
-    //     'order_type': 'out',
-    //     'order_status': 1,
-    //   }, function (res) {
-    //     if (res.data.errNum == 1) {
-    //       THIS.setData({
-    //         ordertake: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
-    // 获取历史订单
-    // app.post(
-    //   config.order.orderList, {
-    //     'token': wx.getStorageSync('token'),
-    //     'order_status': 2,
-    //   }, function (res) {
-    //     if (res.data.errNum == 1) {
-    //       THIS.setData({
-    //         orderhist: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
+    //就餐订单
+    this.setData({
+      orderlist: wx.getStorageSync('orderlist')
+    });
+    //点餐订单
+    this.setData({
+      orderqucan: wx.getStorageSync('orderqucan')
+    });
+    //预约订单
+    this.setData({
+      ordertake: wx.getStorageSync('ordertake')
+    });
+    //历史订单
+    this.setData({
+      orderhist: wx.getStorageSync('orderhist')
+    });
   },
 
   /**

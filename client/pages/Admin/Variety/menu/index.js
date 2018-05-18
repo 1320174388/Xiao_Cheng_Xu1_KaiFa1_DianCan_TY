@@ -10,45 +10,24 @@ Page({
     select: false,
     selected: true,
     showModalStatus: "hide",
-    datas: [
-      { id: 1, food_img: '../../../../icon/cai1.jpg', food_name: '娃娃菜', food_sort: '1',
-        food_price:'0.1' },
-      {
-        id: 2, food_img: '../../../../icon/cai2.jpg', food_name: '鱼香肉丝', food_sort: '2',
-        food_price: '0.1' },
-      {
-        id: 3, food_img: '../../../../icon/menu.jpg', food_name: '拍黄瓜', food_sort: '3',
-        food_price: '0.1' },
-    ],
+    datas:null,
     host:null,
-    foodclass:[
-      { id: 1, class_name: '蔬菜', class_sort:'1'},
-      { id: 2, class_name: '热菜', class_sort: '2' },
-      { id: 3, class_name: '凉菜', class_sort: '3' },
-    ],
+    foodclass:null,
     foodInfo:null,
     edits:null
   },
   // 删除菜品
   delfoods:function(e){
-    var THIS = this;
-    app.post(
-      config.foods.delete, {
-        "token": wx.getStorageSync('token'),
-        'id': e.currentTarget.dataset.id
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg,'success');
-          setTimeout(function () {
-            THIS.onLoad()
-          }, 1000);
-        }
-      }
-    );
+    var deldatas = this.data.datas;
+    console.log(e.currentTarget.dataset.id);
+    delete deldatas[e.currentTarget.dataset.id];
+    wx.setStorageSync('datas', deldatas);
+    this.onLoad();
   },
   // 修改菜品信息
   editfoods:function(e){
     var i = e.currentTarget.dataset.index;
+    wx.setStorageSync('index_id', e.currentTarget.dataset.index);
     wx.setStorageSync('editfoods', this.data.datas[i]);
     app.baseUrl('/pages/Admin/Variety/editlist/editlist');
   },
@@ -56,30 +35,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var THIS = this;
-    // app.post(
-    //   config.service.foods, {
-    //     "token": wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.errNum == 0) {
-    //       THIS.setData({
-    //         foodclass: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
-    // app.post(
-    //   config.service.foodsList, {
-    //     "token": wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.errNum == 0) {
-    //       THIS.setData({
-    //         host: config.service.host,
-    //         datas: res.data.retData
-    //       })
-    //     }
-    //   }
-    // );
+    this.setData({
+      foodclass: wx.getStorageSync('foodclass')
+    });
+    this.setData({
+      datas: wx.getStorageSync('datas')
+    }) 
   },
   /**
    * 搜索菜品
@@ -187,34 +148,24 @@ Page({
   },
   // 添加菜品列表
   cates:function(){
+    
     app.baseUrl("/pages/Admin/Variety/addlist/addlist");
   },
-  // 删除菜品列表
+  // 删除菜品分类
   removes:function(e){
-    var THIS=this;
-    app.post(
-      config.service.menuRemove, {
-        "token": wx.getStorageSync('token'),
-        "class_id": e.currentTarget.dataset.remid
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          THIS.setData({
-            host: config.service.host,
-            datas: res.data.retData
-          })
-          app.point(res.data.retMsg, "success");
-          setTimeout(function () {
-            THIS.onLoad()
-          }, 1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      }
-    );
+    var delfoodclass = this.data.foodclass;
+    console.log(e.currentTarget.dataset.remid);
+    console.log(delfoodclass);
+    delete delfoodclass[e.currentTarget.dataset.remid];
+    wx.setStorageSync('foodclass', delfoodclass);
+    this.onLoad();
   },
 
+// 修改菜品分类
   formSubmit:function(e){
     wx.setStorageSync('key', e.detail.value);
+    wx.setStorageSync('id', e.currentTarget.dataset.id);
+    console.log(e);
     app.baseUrl('/pages/Admin/Variety/edit/edit');
   }
 })

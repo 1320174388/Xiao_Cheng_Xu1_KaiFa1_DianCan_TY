@@ -20,19 +20,14 @@ Page({
    * 添加座号函数
    */
   submit:function(e){
-    app.post(
-      config.shop.add_table,{
-        'token': wx.getStorageSync('token'),
-        'table_number':e.detail.value.table_number
-      },function(res){
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      }
-    )
+    console.log(e.detail.value);
+    var table_number = e.detail.value.table_number;
+    var desk = wx.getStorageSync('desk');
+    desk[desk.length] = { id: 4, src: '../../../../icon/desk.jpg', table_number: table_number };
+    wx.setStorageSync('desk', desk);
+    wx.removeStorageSync('value');
+    app.point('添加成功', "success");
+    app.timeBack(2000);
   },
 
   /**

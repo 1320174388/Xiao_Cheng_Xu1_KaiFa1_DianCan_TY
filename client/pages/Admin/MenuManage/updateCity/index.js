@@ -71,19 +71,16 @@ Page({
   },
   // 修改地址
   formSubmit:function(e){
-   app.post(
-     config.order.orderEdit, {
-       'token': wx.getStorageSync('token'),
-       'order_addr': e.detail.value.order_addr,
-       'id': e.detail.value.id
-     }, function (res) {
-       if (res.data.errNum == 1) {
-         app.point(res.data.retMsg, "success");
-         app.timeBack(1000);
-       } else {
-         app.point(res.data.retMsg, "none");
-       }; 
-     }
-   );
+    console.log(e);
+    var update_addres = e.detail.value;
+    var id = update_addres.id;
+    var order_addr = update_addres.order_addr;
+    var ordertake = wx.getStorageSync('ordertake');
+    ordertake[id] = {
+      order_addr: order_addr
+    };
+    wx.setStorageSync('ordertake', ordertake);
+    app.point('修改成功', "success");
+    app.timeBack(2000);
  }
 })

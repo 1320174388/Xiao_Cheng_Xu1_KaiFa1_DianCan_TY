@@ -126,6 +126,7 @@ page{
 }  
 .add{
   background-color: skyblue;
+  width: 100%;
 }
 /*模态框  */
 #model{
@@ -139,6 +140,7 @@ page{
 }
 #model .content{
   width:80%;
+  height:590rpx;
   text-align: center;
   margin:200rpx 75rpx;
 }

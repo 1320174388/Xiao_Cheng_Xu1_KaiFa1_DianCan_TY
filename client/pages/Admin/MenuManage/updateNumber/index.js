@@ -11,20 +11,15 @@ Page({
   },
 
   formSubmit:function(e){
-    app.post(
-      config.order.orderEdit, {
-        'token': wx.getStorageSync('token'),
-        'id': e.detail.value.id,
-        'table_id': e.detail.value.number
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        }; 
-      }
-    );
+    console.log(e);
+    var update_number = e.detail.value;
+    var id = update_number.id;
+    var number = update_number.number;
+    var orderlist = wx.getStorageSync('orderlist');
+    orderlist[id].table_id = number;
+    wx.setStorageSync('orderlist', orderlist);
+    app.point('修改成功', "success");
+    app.timeBack(2000);
   },
   /**
    * 生命周期函数--监听页面加载

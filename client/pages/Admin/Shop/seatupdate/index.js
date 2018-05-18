@@ -22,20 +22,14 @@ Page({
 
   submit:function(e){
     console.log(e);
-    app.post(
-      config.shop.update_tables, {
-        'token': wx.getStorageSync('token'),
-        'table_number': e.detail.value.table_number,
-        'table_id': e.detail.value.table_id
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    var update_desk = e.detail.value;
+    var table_id = update_desk.table_id;
+    var table_number = update_desk.table_number;
+    var desk = wx.getStorageSync('desk');
+    desk[table_id].table_number = table_number;
+    wx.setStorageSync('desk', desk);
+    app.point('修改成功', "success");
+    app.timeBack(2000);
   },
 
   /**
