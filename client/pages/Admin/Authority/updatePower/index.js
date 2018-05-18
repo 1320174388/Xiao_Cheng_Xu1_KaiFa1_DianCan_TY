@@ -8,7 +8,8 @@ Page({
    */
   data: {
     array: [
-      { id: 2, role_name: '二级管理员' }
+      { id: 2, role_name: '二级管理员' },
+      { id: 3, role_name: '三级管理员' }
     ],
     id:null,
     update_value:''
@@ -18,18 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var THIS = this
-    // app.post(
-    //   config.service.getPosition, {
-    //     'token': wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.retData) {
-    //       THIS.setData({
-    //         array: res.data.retData.list
-    //       });
-    //     };
-    //   }
-    // );
+   
   },
 
   /**
@@ -81,34 +71,24 @@ Page({
   
   },
   // 添加
-  add:function(){
+  add:function(e){
     app.baseUrl('/pages/Admin/Authority/powerManage/index');
   },
   
 //修改
   formSubmit:function(e) {
     wx.setStorageSync('value', e.detail.value);
+    console.log(e);
     app.baseUrl('/pages/Admin/Authority/update/index');
   },
 
 //删除
- 
   deleteClick: function (e) {
-    var THIS=this;
-    app.post(
-      config.service.delPosition, {
-        'token': wx.getStorageSync('token'),
-        'id': e.currentTarget.dataset.editid
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          setTimeout(function () {
-            THIS.onLoad()
-          }, 1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    console.log(e.currentTarget.dataset.editid);
+    var delarray=this.data.array;
+    delete delarray[e.currentTarget.dataset.editid];
+    this.setData({
+      array:delarray,
+    })
   }
 })

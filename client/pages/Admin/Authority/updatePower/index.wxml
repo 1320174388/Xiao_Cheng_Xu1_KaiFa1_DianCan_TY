@@ -1,6 +1,6 @@
 <!--总经理 ID:445678  -->
 <view class="tunnel">
-     <view class="list"  wx:for="{{array}}" wx:key="{{index}}">
+     <view class="list"  wx:for="{{array}}" wx:key="index" wx:if="{{item}}">
         <form bindsubmit="formSubmit" >
             <view class="left">
                 <view>职位名称:{{item.role_name}}</view>
@@ -14,7 +14,7 @@
                 </view>
             <!-- 删除  -->
             <view  class="posion-remove">
-              <text class="remove" data-editid="{{item.id}}" bindtap="deleteClick">删除</text>
+              <text class="remove" data-editid="{{index}}" bindtap="deleteClick">删除</text>
             </view>
                 
             </view>
