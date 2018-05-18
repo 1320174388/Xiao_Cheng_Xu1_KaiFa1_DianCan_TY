@@ -7,9 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: [
-      { id: 1, admin_name: '123', role_name:'二级管理员' }
-    ],
+    array: null,
     admin_id:null,
     admin_name:null,
     role_id:null,
@@ -20,18 +18,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var THIS = this
-    // app.post(
-    //   config.service.getAdmin, {
-    //     'token': wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.retData) {
-    //       THIS.setData({
-    //         array: res.data.retData.list
-    //       });
-    //     };
-    //   }
-    // );
+    this.setData({
+      array: wx.getStorageSync('management')
+    });
   },
 
   /**
@@ -95,21 +84,10 @@ Page({
 
   //删除
   deleteClick: function (e) {
-    var THIS = this; 
-    app.post(
-      config.service.delAdmin, {
-        'token':wx.getStorageSync('token'),
-        'admin_id':e.currentTarget.dataset.editid
-      }, function (res) {
-        if (res.data.errNum == 0) {
-          app.point(res.data.retMsg, "success");
-          setTimeout(function () {
-            THIS.onLoad()
-          }, 1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    console.log(e.currentTarget.dataset.editid)
+    var delarray = wx.getStorageSync('management');
+    delete delarray[e.currentTarget.dataset.editid];
+    wx.setStorageSync('management', delarray);
+    this.onLoad();
   }
 })

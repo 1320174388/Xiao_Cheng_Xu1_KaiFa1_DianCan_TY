@@ -19,11 +19,11 @@
   </view>
   <view class="choose">
       <radio-group class="radio-group" bindchange="radioChange" name="role_id">
-           <view wx:for="{{array}}" wx:key="id"  class="chooseText">
+           <view wx:for="{{array}}" wx:key="index"  class="chooseText">
                 <view>
                     <text bindtap="mySelect" data-me="{{item.role_name}}">
                               {{item.role_name}}</text>
-                    <radio class="tunnel-switch" color="#b2da89" value="{{item.id}}"/>
+                    <radio class="tunnel-switch" color="#b2da89" value="{{index}}"/>
                 </view>
           </view>
       </radio-group> 

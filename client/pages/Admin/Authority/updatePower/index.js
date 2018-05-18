@@ -7,10 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: [
-      { id: 2, role_name: '二级管理员' },
-      { id: 3, role_name: '三级管理员' }
-    ],
+    array: null,
     id:null,
     update_value:''
   },
@@ -19,7 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+   this.setData({
+     array: wx.getStorageSync('jurisdiction')
+   })
   },
 
   /**
@@ -84,11 +83,9 @@ Page({
 
 //删除
   deleteClick: function (e) {
-    console.log(e.currentTarget.dataset.editid);
     var delarray=this.data.array;
     delete delarray[e.currentTarget.dataset.editid];
-    this.setData({
-      array:delarray,
-    })
+    wx.setStorageSync('jurisdiction', delarray);
+    this.onLoad();
   }
 })

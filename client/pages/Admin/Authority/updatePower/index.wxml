@@ -7,7 +7,7 @@
                 <text class="tx1">职位ID:{{item.id}}</text>
             </view>
             <view class="right">
-                <input hidden name="id" value="{{item.id}}"></input>
+                <input hidden name="id" value="{{index}}"></input>
                 <input hidden name="roleName" value="{{item.role_name}}"></input>
                 <view  class="posion-modify">
                   <button class='modify' form-type="submit">修改</button>

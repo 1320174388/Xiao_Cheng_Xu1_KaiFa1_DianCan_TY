@@ -1,7 +1,7 @@
 <!--职位  -->
 
   <view>
-        <view class="list"  wx:for="{{array}}" wx:key="id">
+        <view class="list" wx:if="{{item}}" wx:for="{{array}}" wx:key="index">
 <form bindsubmit="addSubmit">
           <view class="left">
               <view>管理员名称：{{item.admin_name}}</view>
@@ -9,7 +9,7 @@
             </view>
 
           <view class="right">
-                <input hidden name="id" value="{{item.id}}"></input>
+                <input hidden name="id" value="{{index}}"></input>
                 <input hidden name="admin_name" value="{{item.admin_name}}"></input>
                 <view class='posion-modify'>
                   <button class='modify' form-type="submit">修改</button>
@@ -17,7 +17,7 @@
                 
             <!-- 删除  -->
             <view class='posion-remove'>
-              <text class="remove" data-editid="{{item.id}}" bindtap="deleteClick">删除</text>
+              <text class="remove" data-editid="{{index}}" bindtap="deleteClick">删除</text>
             </view>
                 
           </view>

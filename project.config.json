@@ -30,12 +30,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "后台首页",
-					"pathName": "pages/Admin/Authority/updatePower/index",
+					"pathName": "pages/Admin/index/index",
 					"query": ""
 				}
 			]

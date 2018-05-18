@@ -39,7 +39,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-   
+
+    /**
+     * 模块信息数据
+     */
+    var moduleinformation = [
+      { id: 1, right_name: '店铺管理' },
+      { id: 2, right_name: '菜品管理' },
+      { id: 3, right_name: '订单管理' }
+    ];
+    wx.setStorageSync('moduleinformation', moduleinformation);
+
+    /**
+     * 职位管理 数据信息
+     */
+    var jurisdiction = [
+      { id: 2, role_name: '二级管理员' },
+      { id: 3, role_name: '三级管理员' }
+    ];
+    wx.setStorageSync('jurisdiction', jurisdiction);
+
+    /**
+     * 管理列表 数据信息
+     */
+    var management = [
+      { id: 1, admin_name: '烟雨楼', role_name: '二级管理员' },
+      { id: 2, admin_name: '半山妖', role_name: '三级管理员' }
+    ];
+    wx.setStorageSync('management', management);
+
   },
 
   /**

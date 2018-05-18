@@ -21,19 +21,8 @@ Page({
     //动态赋值
     this.setData({
       'admin_value': wx.getStorageSync('value'),
+      "array": wx.getStorageSync('jurisdiction')
     });
-    // var THIS = this;
-    // app.post(
-    //   config.service.getPositionInfo, {
-    //     'token': wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.retData) {
-    //       THIS.setData({
-    //         array: res.data.retData.list
-    //       });
-    //     };
-    //   }
-    // );
   },
 
   /**
@@ -89,21 +78,24 @@ Page({
    * 修改管理员
    */
 formSubmit:function(e){
-  app.post(
-    config.service.updateAdmin, {
-      'token': wx.getStorageSync('token'),
-      'admin_id': e.detail.value.admin_id,//wxml中name的值
-      'admin_name': e.detail.value.admin_name,
-      'role_id': e.detail.value.role_id
-    }, function (res) {
-      if (res.data.errNum == 0) {
-        wx.removeStorageSync('admin_value');
-        app.point(res.data.retMsg, "success");
-        app.timeBack(1000);
-      } else {
-        app.point(res.data.retMsg, "none");
-      };
-    }
-  );
+
+  var admin_id   = e.detail.value.admin_id;
+  var admin_name = e.detail.value.admin_name;
+  var role_id    = e.detail.value.role_id;
+
+  if (!role_id){
+    return app.point('请选择职位', "none");
+  }
+
+  var management = wx.getStorageSync('management');
+  var jurisdiction = wx.getStorageSync('jurisdiction');
+  var role_name = jurisdiction[role_id].role_name;
+  management[e.detail.value.admin_id] = { id: 2, "admin_name": admin_name, "role_name": role_name };
+
+  wx.setStorageSync('management', management);
+  wx.removeStorageSync('admin_value');
+  app.point('修改成功', "success");
+  app.timeBack(1000);
+
  }
 })

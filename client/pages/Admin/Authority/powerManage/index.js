@@ -76,6 +76,32 @@ Page({
 // form提交
   formSubmit:function(e){
     // 添加职位
-    
+    console.log(e.detail.value.roleName);
+    var roleName = e.detail.value.roleName;
+    var right = e.detail.value;
+    delete right['roleName'];
+    var right = e.detail.value;
+    delete right['roleName'];
+    var assync_c = 0;
+    for (var key in right) {
+      if (right[key] == true) {
+        right['right' + assync_c] = key;
+      }
+      delete right[key];
+      assync_c++;
+    };
+    var arr = ''
+    for (var i in right) {
+      arr += right[i]; //属性
+    }
+    if (arr == '') {
+      return app.point('请选择管理权限', "none");
+    }
+    var jurisdiction = wx.getStorageSync('jurisdiction');
+    jurisdiction[jurisdiction.length] = { id: 666, role_name: roleName };
+    wx.setStorageSync('jurisdiction', jurisdiction);
+    wx.removeStorageSync('value');
+    app.point('添加成功', "success");
+    app.timeBack(2000);
   }
 })
