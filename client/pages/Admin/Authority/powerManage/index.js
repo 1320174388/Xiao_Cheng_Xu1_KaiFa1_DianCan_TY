@@ -21,18 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var THIS = this
-    // app.post(
-    //   config.service.position, {
-    //     'token': wx.getStorageSync('token')
-    //   }, function (res) {
-    //     if (res.data.retData) {
-    //       THIS.setData({
-    //         array: res.data.retData.list
-    //       });
-    //     };
-    //   }
-    // );
+    
   },
 
   /**
@@ -87,38 +76,6 @@ Page({
 // form提交
   formSubmit:function(e){
     // 添加职位
-    var add = this;
-    var roleName=e.detail.value.roleName;
-    var value = e.detail.value;
-    delete value["roleName"];
-    var i = 0;
-    for (var key in value) {
-      if (value[key] == true) {
-        value['right'+i] = key;
-      }
-      delete value[key];
-      i++;
-    };
-    var arr = []
-    for (var i in value) {
-      arr.push(value[i]); //属性
-    }
-    app.post(
-      config.service.addPosition, {
-        'token': wx.getStorageSync('token'),
-        'roleName': roleName,
-        'right': arr,
-      },function(res){
-        if (res.data.errNum == 0) {
-          add.setData({
-            arrayList: res.data.retData
-          });
-          app.point(res.data.retMsg, "success");
-          app.timeBack(1000);
-        } else {
-          app.point(res.data.retMsg, "none");
-        };
-      }
-    );
+    
   }
 })

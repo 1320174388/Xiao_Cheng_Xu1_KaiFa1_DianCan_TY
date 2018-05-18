@@ -17,7 +17,6 @@
                     <switch class="tunnel-switch" color="#b2da89" name="{{item.id}}"/>
                 </view>
           </view>
-       
     </view>
 
     
