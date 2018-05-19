@@ -9,10 +9,7 @@ Page({
   data: {
     selectPerson: true,
     selectArea: false,
-    array: [
-      { id: 1, right_name: '店铺管理' },
-      { id: 2, right_name: '菜品管理' },
-    ],
+    array: null,
     arrayList: null,
     update_value:'',
   },
@@ -21,7 +18,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      array: wx.getStorageSync('moduleinformation')
+    });
   },
 
   /**

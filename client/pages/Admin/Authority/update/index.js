@@ -8,17 +8,17 @@ Page({
    */
   data: {
     update_value: '',
-    array: wx.getStorageSync('moduleinformation'),
+    array: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var value = wx.getStorageSync('value');
-    if (value) {
-      this.setData({ update_value: value });
-    }
+    this.setData({ 
+      update_value: wx.getStorageSync('value'), 
+      array: wx.getStorageSync('moduleinformation')
+    });
   },
 
   /**

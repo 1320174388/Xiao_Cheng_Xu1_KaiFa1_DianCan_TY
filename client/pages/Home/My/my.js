@@ -26,35 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getUserInfo({
-      success:function(res){
-        console.log(res);
-      }
-    });
-    var THIS = this
-    wx.request({
-      url: config.service.adminUser, //仅为示例，并非真实的接口地址
-      data: {
-        "token": wx.getStorageSync('token')
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-      method:'POST',
-      success: function (res) {
-        if (res.data.errNum == 0){
-          THIS.setData({
-            //true
-            datas: res.data.retMsg
-          })
-        }else{
-          THIS.setData({
-            //true
-            // datas: false
-          })
-        }
-      }
-    })
+    
   },
 
   /**

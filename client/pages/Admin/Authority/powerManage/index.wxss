@@ -103,7 +103,8 @@ page {
 }
 /*确定  */
 .tunne4{
-    margin-top: 100%;
+    position:fixed;
+    bottom:0;
     height: 50px;
     width: 100%;
 }
