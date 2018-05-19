@@ -9,7 +9,7 @@ Page({
   data: {
     order_info: [
       {
-        oid: 1, food_img: '../../../../icon/cai1.jpg', food_name: '鱼香肉丝',
+        oid: 1, food_img: config.index.host_image_url+'/cai1.jpg', food_name: '鱼香肉丝',
         food_number: '1', order_price: '0.1'
       },
     ],

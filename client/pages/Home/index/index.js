@@ -26,19 +26,12 @@ Page({
     ],
   },
   onLoad: function () {
-    // var This = this;
-    // app.post(
-    //   config.index.git_sowing_map, {
-    //   }, function (res) {
-    //     This.setData({
-    //       imgUrls: res.data.retData
-    //     });
-    //   }
-    // );
+    
   },
   tell:function(){
+    app.point('联系电话：010-86220269', 'none', 3000);
     wx.makePhoneCall({
-      phoneNumber: '17090051724'
+      phoneNumber: '010-86220269' //仅为示例，并非真实的电话号码
     })
   },
   maps: function () {
@@ -69,4 +62,8 @@ Page({
       url: '/pages/Home/SelectionFood/imgOrder/index',
     })
   },
+
+  onShareAppMessage:function(){
+    
+  }
 })

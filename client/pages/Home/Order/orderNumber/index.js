@@ -8,7 +8,8 @@ Page({
   data: {
     navbar: ['就餐', '点餐', '历史'],
     currentTab: 0,
-    imghost: config.service.imghost
+    imghost: config.service.imghost,
+    host_image_url:config.index.host_image_url
   },
   //选项卡
   navbarTap: function (e) {

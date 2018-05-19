@@ -82,15 +82,9 @@ Page({
         food_info_arr: wx.getStorageSync('food_info_arr'),
       });
     }, 500);
-    app.post(
-      config.shop.getShopAddr, {
-
-      }, function (res) {
-        This.setData({
-          shop_addr: res.data.retData.shop_addr,
-        });
-      }
-    );
+    This.setData({
+      shop_addr: '北京市海淀区高里掌路1号院',
+    });
   },
 
   /**

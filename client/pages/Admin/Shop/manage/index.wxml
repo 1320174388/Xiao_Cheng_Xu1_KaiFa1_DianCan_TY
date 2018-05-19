@@ -42,7 +42,7 @@
 <!--座号管理 -->
   <view class='{{select ? "show" : "hide" }}' id='desks'>
     <view class='desk' wx:for="{{desk}}" wx:key="index" wx:if="{{item}}" data-tabltnum="{{index}}" 
-    bindtap="tap" bindlongtap="longTap" data-table_number="{{item.table_number}}"
+    bindtap="tap" bindlongpress="longpress" data-table_number="{{item.table_number}}"
     style='background-image:url("{{item.src}}");'>
         <text class='world'>{{item.table_number}}号桌</text>
         <button class="update" bindtap="hideup" hidden="{{item.hidden}}" 

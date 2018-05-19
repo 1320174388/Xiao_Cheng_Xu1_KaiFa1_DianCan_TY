@@ -80,13 +80,11 @@ page{
     border-bottom:1px solid rgba(0, 0, 0, .03);
   }
   .desk{
-    width: 100%;
     height: 60rpx;
     padding-left: 25rpx;
     margin-top:-5rpx;
   }
    .desk1{
-    width: 100%;
     height: 60rpx;
     padding-left: 25rpx;
     margin-top:10rpx;
@@ -100,7 +98,7 @@ page{
     font-size: 28rpx;
     color: DimGray;
     position:relative;
-    left:220rpx
+    left:200rpx
   }
     .info{
     float: right;
@@ -143,8 +141,8 @@ page{
   .payed-money{
     font-size: 30rpx;
     color:#fff;
-    border-radius: 8px;
-    background-color: #dddddd;
+    border-radius: 4px;
+    background-color: lightgreen;
     width: 161rpx;
     height: 60rpx;
     text-align: center;
@@ -152,7 +150,6 @@ page{
     margin-left:20rpx
   }
   .last{
-    width: 100%;
     height: 50rpx;
     padding-left: 40%;
     padding-top: 10rpx;

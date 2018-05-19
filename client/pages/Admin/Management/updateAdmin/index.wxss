@@ -52,7 +52,8 @@ page {
 
 /*确定  */
 .tunne2{
-    margin-top: 100%;
+    position:fixed;
+    bottom: 0;
     height: 50px;
     width: 100%;
 }
@@ -109,7 +110,6 @@ page {
 .but{
   background:#77b3ff;
   color: #FFF;
-  margin-top: 100%;
 }
 
 

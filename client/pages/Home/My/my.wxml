@@ -17,42 +17,16 @@
     <!-- 选项 -->
     <view style="flex:1" class='list'>
       <view class="content-row">  
-      <!-- 点餐 -->
-        <view  style="flex:1">
-          <view class="content-column">  
-            <view style="flex:1" class="imgdiancan">
-              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/My.png' class='shouyeimg'></image>
-            </view>  
-            <view style="flex:1" class='context-shouye'>首页</view> 
-          </view>
+
+     <view data-Navigation_To="{{item.Navigation_To}}" bindtap='{{item.Navigation_Bind}}' wx:for="{{Navigation}}" wx:key="{{index}}"  style="flex:1">
+        <view class="content-column">  
+          <view style="flex:1" class="{{item.Navigation_class1}}">
+            <image src='{{item.Navigation_Img_url}}' class='{{item.Navigation_class3}}'></image>
+          </view>  
+          <view style="flex:1" class='{{item.Navigation_class2}}'>{{item.Navigation_Name}}</view> 
         </view>
-          <!-- 预定 -->
-        <view style="flex:1">
-          <view class="content-column">  
-            <view style="flex:1" class="imgyuding">
-              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/dfood.png' class='img'></image>
-            </view>  
-            <view style="flex:1" class='context-diancan'>点餐</view> 
-          </view>
-        </view>
-          <!-- 外卖 -->
-        <view style="flex:1">
-          <view class="content-column">  
-            <view style="flex:1" class="imgwaimai">
-              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/order1.png' class='img'></image>
-            </view>  
-            <view style="flex:1" class='context-diancan'>订单</view> 
-          </view>
-        </view>
-        <!-- 排队 -->
-        <view style="flex:1">
-          <view class="content-column">  
-            <view style="flex:1" class="imgpaidui">
-              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/time.png' class='img'></image>
-            </view>  
-            <view style="flex:1" class='context-diancan'>预约</view> 
-          </view>
-        </view>    
+      </view> 
+
       </view>  
     </view>
       <!-- 后台管理 -->

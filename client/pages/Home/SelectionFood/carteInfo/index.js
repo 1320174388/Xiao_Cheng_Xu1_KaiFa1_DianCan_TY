@@ -1,5 +1,6 @@
 var config = require('../../../../config');
 var app = getApp();
+var type_number_status = 0;
 // pages/Home/OrderFood/carteInfo/index.js
 Page({
 
@@ -52,7 +53,10 @@ Page({
   },
   // submitCart
   submitCart: function (e) {
-
+    if (type_number_status>0){
+      return false;
+    }
+    type_number_status++;
     var key1 = this.data.currentTab;
     var key2 = e.currentTarget.dataset.index;
     var key3 = e.currentTarget.dataset.food_id;
@@ -103,6 +107,7 @@ Page({
       });
       wx.setStorageSync('food_info_arr', food_info_arr);
     }
+    type_number_status--;
   },
   // 清空
   showitemes: function () {
@@ -162,7 +167,7 @@ Page({
   // 结账
   end: function () {
     wx.navigateTo({
-      url: '/pages/Home/submit/intoroom/index',
+      url: '/pages/Home/SelectionFood/submitorder/index',
     })
   },
 })

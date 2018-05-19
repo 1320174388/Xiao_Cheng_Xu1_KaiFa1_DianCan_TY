@@ -3,9 +3,13 @@
  */
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = '';
+
+var host_image_url = 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com';
+
 var config = {
     index:{
       host,
+      host_image_url,
       // 请求轮播图接口
       git_sowing_map: `${host}/api/home/Sowing_map/git_sowing_map`,
     },

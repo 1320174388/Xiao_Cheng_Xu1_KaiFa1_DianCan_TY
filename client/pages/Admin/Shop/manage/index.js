@@ -2,7 +2,7 @@
 var config = require('../../../../config.js');
 var app = getApp();
 var time=null;
-var a = 0;
+var image_code_type_status = 0;
 Page({
 
   /**
@@ -18,19 +18,21 @@ Page({
     showModalStatus: "hide",
     shoopCode:null,
     img_url: wx.getStorageSync('img_url'),
-    shoopCode: "../../../../icon/201634153158007.jpg" ,
+    shoopCode: config.index.host_image_url+"/dilaotianhuang.png" ,
   },
   /**
      * 弹出层函数
      */
   //出现
-  longTap: function (e) {
-    a = 1;
+  longpress: function (e) {
+    image_code_type_status = 1;
     var This = this;
     var index = e.currentTarget.dataset.tabltnum;
     var desk = this.data.desk;
     for (var i in desk) {
-      desk[i]['hidden'] = true;
+      if (desk[i]) {
+        desk[i]['hidden'] = true;
+      }
     };
     desk[index].hidden = false;
     this.setData({
@@ -38,9 +40,11 @@ Page({
     });
     clearTimeout(time);
     time = setTimeout(function () {
-      a = 0;
+      image_code_type_status = 0;
       for (var i in desk) {
-        desk[i]['hidden'] = true;
+        if (desk[i]) {
+          desk[i]['hidden'] = true;
+        }
       }
       This.setData({
         desk: null,
@@ -57,24 +61,27 @@ Page({
     this.setData({
       shop: wx.getStorageSync('shop')
     });
+
+    //店铺图片
+    var This = this;
+    setInterval(function (res) {
+      if (This.data.img_url != wx.getStorageSync('img_url')) {
+        This.setData({
+          img_url: wx.getStorageSync('img_url'),
+        });
+      }
+    }, 500);
+
     // 座号管理
     var desks = wx.getStorageSync('desk');
       for (var i in desks) {
-        desks[i]['hidden'] = true;
+        if (desks[i]){
+          desks[i]['hidden'] = true;
+        }
       }
       this.setData({
         desk: desks,
-      });
-      //图片
-      var This = this;
-      setInterval(function(res){
-        if (This.data.img_url != wx.getStorageSync('img_url')) {
-          This.setData({
-            img_url: wx.getStorageSync('img_url'),
-          });
-        }
-      },500);
-      
+      });     
   },
 
 //修改座号
@@ -85,14 +92,20 @@ Page({
   },
 // 删除座号
   hidedel: function (e) {
-    var deldesk=this.data.desk;
+    var deldesk = wx.getStorageSync('desk');
     delete deldesk[e.currentTarget.dataset.editid];
     wx.setStorageSync('desk', deldesk);
-    this.onLoad();
-    
+    app.point('删除成功','success',3000);
+    var This = this;
+    setTimeout(function(res){
+      This.onLoad();
+    },3000);
   },
 // 二维码
   tap:function(e){
+    if (image_code_type_status==1){
+      return false;
+    }
     this.setData({
       showModalStatus: "show"
     })
