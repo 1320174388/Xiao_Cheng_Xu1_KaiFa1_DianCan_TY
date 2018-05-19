@@ -1,5 +1,5 @@
 <view class="page">
-  <image src='../../../../icon/cai1.jpg' class='carte'></image>
+  <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' class='carte'></image>
   <view class='carte-info'>
     <view class='carte-name'><text>菜品名称</text></view>
     <view class='carte-price'><text>￥18.00</text></view>

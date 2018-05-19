@@ -209,6 +209,7 @@
   font-size:28rpx;
   margin:0 20rpx;
   font-weight:bold;
+  padding-bottom:10rpx;
 }
 /*购物车  */
  .flex-shop{

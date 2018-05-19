@@ -23,7 +23,7 @@ Page({
     console.log(e.detail.value);
     var table_number = e.detail.value.table_number;
     var desk = wx.getStorageSync('desk');
-    desk[desk.length] = { id: 4, src: '../../../../icon/desk.jpg', table_number: table_number };
+    desk[desk.length] = { id: 4, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/desk.jpg', table_number: table_number };
     wx.setStorageSync('desk', desk);
     wx.removeStorageSync('value');
     app.point('添加成功', "success");

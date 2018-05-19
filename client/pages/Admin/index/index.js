@@ -83,16 +83,16 @@ Page({
     */
    var desk = [
      {
-       id: 1, src: '../../../../icon/desk.jpg', table_number: '1'
+       id: 1, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/desk.jpg', table_number: '1'
      },
      {
-       id: 1, src: '../../../../icon/desk.jpg', table_number: '2'
+       id: 1, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/desk.jpg', table_number: '2'
      },
      {
-       id: 1, src: '../../../../icon/desk.jpg', table_number: '3'
+       id: 1, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/desk.jpg', table_number: '3'
      },
      {
-       id: 1, src: '../../../../icon/desk.jpg', table_number: '4'
+       id: 1, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/desk.jpg', table_number: '4'
      },
    ];
    wx.setStorageSync('desk', desk);
@@ -109,12 +109,12 @@ Page({
      * 菜品分类下的图片 数据信息
      */
     var img_url = [
-      { sid: 1, shop_img: '../../../../icon/1.jpg' },
-      { sid: 2, shop_img: '../../../../icon/2.jpg' },
-      { sid: 3, shop_img: '../../../../icon/3.jpg' },
-      { sid: 4, shop_img: '../../../../icon/3.jpg' },
-      { sid: 5, shop_img: '../../../../icon/1.jpg' },
-      { sid: 6, shop_img: '../../../../icon/2.jpg' },
+      { sid: 1, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/1.jpg' },
+      { sid: 2, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/2.jpg' },
+      { sid: 3, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/3.jpg' },
+      { sid: 4, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/3.jpg' },
+      { sid: 5, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/1.jpg' },
+      { sid: 6, shop_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/2.jpg' },
     ];
     wx.setStorageSync('img_url', img_url);
     /**
@@ -122,15 +122,15 @@ Page({
      */
     var datas = [
       {
-        id: 1, food_img: '../../../../icon/cai1.jpg', food_name: '娃娃菜', food_sort: '1',
+        id: 1, food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg', food_name: '娃娃菜', food_sort: '1',
         food_price: '0.1'
       },
       {
-        id: 2, food_img: '../../../../icon/cai2.jpg', food_name: '鱼香肉丝', food_sort: '2',
+        id: 2, food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai2.jpg', food_name: '鱼香肉丝', food_sort: '2',
         food_price: '0.1'
       },
       {
-        id: 3, food_img: '../../../../icon/menu.jpg', food_name: '拍黄瓜', food_sort: '3',
+        id: 3, food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/default_table.jpg', food_name: '拍黄瓜', food_sort: '3',
         food_price: '0.1'
       },
     ];

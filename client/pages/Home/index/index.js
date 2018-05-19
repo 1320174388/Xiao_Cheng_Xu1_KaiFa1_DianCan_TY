@@ -9,20 +9,20 @@ Page({
     interval: 5000,
     duration: 1000,
     imgUrls: [
-      { sid: 1, src: '../../../icon/lun1.png' },
-      { sid: 2, src: '../../../icon/menu.jpg' },
-      { sid: 3, src: '../../../icon/lun1.png' }
+      { sid: 1, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/lun1.png' },
+      { sid: 2, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/1.jpg' },
+      { sid: 3, src: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/2.jpg' }
     ],
     tuijian:[
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img:'../../../icon/cai1.jpg'},
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' },
-      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: '../../../icon/cai1.jpg' }
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img:'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg'},
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' },
+      { id: 1, food_name: '巧扮苦菊', food_price: '14.00', food_img: 'https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg' }
     ],
   },
   onLoad: function () {

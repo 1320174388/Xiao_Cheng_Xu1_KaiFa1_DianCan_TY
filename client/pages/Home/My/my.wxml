@@ -21,7 +21,7 @@
         <view  style="flex:1">
           <view class="content-column">  
             <view style="flex:1" class="imgdiancan">
-              <image src='../../../icon/My.png' class='shouyeimg'></image>
+              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/My.png' class='shouyeimg'></image>
             </view>  
             <view style="flex:1" class='context-shouye'>首页</view> 
           </view>
@@ -30,7 +30,7 @@
         <view style="flex:1">
           <view class="content-column">  
             <view style="flex:1" class="imgyuding">
-              <image src='../../../icon/dfood.png' class='img'></image>
+              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/dfood.png' class='img'></image>
             </view>  
             <view style="flex:1" class='context-diancan'>点餐</view> 
           </view>
@@ -39,7 +39,7 @@
         <view style="flex:1">
           <view class="content-column">  
             <view style="flex:1" class="imgwaimai">
-              <image src='../../../icon/order1.png' class='img'></image>
+              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/order1.png' class='img'></image>
             </view>  
             <view style="flex:1" class='context-diancan'>订单</view> 
           </view>
@@ -48,7 +48,7 @@
         <view style="flex:1">
           <view class="content-column">  
             <view style="flex:1" class="imgpaidui">
-              <image src='../../../icon/time.png' class='img'></image>
+              <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/time.png' class='img'></image>
             </view>  
             <view style="flex:1" class='context-diancan'>预约</view> 
           </view>
@@ -60,7 +60,7 @@
       <navigator url='/pages/Admin/index/index' wx:if="{{datas}}">
         <view class="content-row">  
           <view  style="flex:1">
-            <image src='../../../icon/manageIco.png' class='imgmanage'></image>
+            <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/manageIco.png' class='imgmanage'></image>
           </view>  
           <view style="flex:2" class='context-manage'>后台管理</view>
           <view style="flex:1" class='ico-manage'>></view>  

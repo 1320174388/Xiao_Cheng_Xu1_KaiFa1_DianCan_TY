@@ -31,7 +31,7 @@ Page({
             "id": "1",
             "food_name": "大白菜",
             "class_id": "1",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": 0.2,
             "food_info": "sddddsds"
           },
@@ -39,7 +39,7 @@ Page({
             "id": "9",
             "food_name": "test1",
             "class_id": "1",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "4",
             "food_info": "二"
           },
@@ -47,7 +47,7 @@ Page({
             "id": "20",
             "food_name": "asdasd",
             "class_id": "1",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "123",
             "food_info": "123123"
           },
@@ -55,7 +55,7 @@ Page({
             "id": "21",
             "food_name": "5456456",
             "class_id": "1",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "6456",
             "food_info": "6456456456"
           },
@@ -63,7 +63,7 @@ Page({
             "id": "22",
             "food_name": "油麦菜",
             "class_id": "1",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "21",
             "food_info": "绿绿的"
           }
@@ -77,7 +77,7 @@ Page({
             "id": "19",
             "food_name": "白菜",
             "class_id": "5",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "12",
             "food_info": "白白的"
           }
@@ -91,7 +91,7 @@ Page({
             "id": "30",
             "food_name": "白菜",
             "class_id": "4",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "12",
             "food_info": "白白的"
           }
@@ -105,7 +105,7 @@ Page({
             "id": "31",
             "food_name": "白菜",
             "class_id": "6",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "12",
             "food_info": "白白的"
           }
@@ -119,7 +119,7 @@ Page({
             "id": "32",
             "food_name": "白菜",
             "class_id": "7",
-            "food_img": "../../../../icon/cai1.jpg",
+            "food_img": "https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/cai1.jpg",
             "food_price": "12",
             "food_info": "白白的"
           }

@@ -94,6 +94,7 @@
   font-size:30rpx;
   background: linear-gradient(to right, #FAD35C , #F76b1C);
   text-align: center;
+  padding-top:5rpx;
 }
 .circle1 {
     width: 2%;

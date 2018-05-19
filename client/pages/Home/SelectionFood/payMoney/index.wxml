@@ -12,7 +12,7 @@
   <!-- 支付成功 -->
   <view class="{{payLoser?'display_show':'display_none'}} head-info">
     <view class='nopay'>支付成功！</view>
-    <view class='prom1'><!-- <image src='../../../../icon/时间.png' class='img'></image>-->
+    <view class='prom1'>
       祝您用餐愉快~</view> 
     <view class='choose' bindtap='playon'>
       <button class='close'>继续点餐</button>

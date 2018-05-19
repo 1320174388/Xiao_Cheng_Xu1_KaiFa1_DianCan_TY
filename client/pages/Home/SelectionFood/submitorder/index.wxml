@@ -7,9 +7,9 @@
         <radio checked="true" bindtap="showitem" class='radiocheck' color='#f58623'/>
         </view>
         <view class="{{open?'display_show':'display_none'}} img"  bindtap='ScanCode'  >
-          <image src='../../../../icon/管理.png' class='img1'></image>
+          <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/orderManage.png' class='img1'></image>
           <text class='text111' >{{table_base}}</text>
-          <image src='../../../../icon/扫码.png' class='img2'></image>
+          <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/saoma.png' class='img2'></image>
         </view>
       </view>
       <!-- 到店取餐 -->
@@ -20,11 +20,11 @@
         </view>
         <view class="{{close?'display_show':'display_none'}} img-set">
           <view class='addr'>
-            <image src='../../../../icon/地址 (2).png' class='img3'></image>
+            <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/orderarr.png' class='img3'></image>
             <text class='contextAddr'>{{shop_addr}}</text>
           </view>
           <view class='setout' bindtap='ChoiceTime'>
-            <image src='../../../../icon/时间.png' class='img4'></image>
+            <image src='https://lg-3fm9mghs-1253290031.cos.ap-shanghai.myqcloud.com/ordertime.png' class='img4'></image>
             <picker mode="date" value="{{date}}" start="1970-01-01" 
                     end="2036-07-18" bindchange="bindDateChange"> 
               <text class='contextTime1'>{{dates}}</text> 
