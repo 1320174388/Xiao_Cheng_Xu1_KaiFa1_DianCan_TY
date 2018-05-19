@@ -16,11 +16,9 @@ page {
 /*店铺管理  */
 .tunne2 {
     margin-top: 10rpx;
-    height: 110rpx;
+    height: 105rpx;
     width: 100%;
     background: #FFF;
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    
     display: flex;
     align-items: center;
     font-family:"LiHei Pro Medium ",儷黑 Pro;

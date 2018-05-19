@@ -70,7 +70,7 @@
 
               <view class='contents'>
                     <view class='top'>
-                        <image wx:if='{{host&&foodInfo.food_img}}' src='{{foodInfo.food_img}}'></image>
+                        <image wx:if='{{foodInfo.food_img}}' src='{{foodInfo.food_img}}'></image>
                         <view class='info'>
                             <text>{{foodInfo.food_name}}</text>
                             <text class='num'>序号：{{foodInfo.food_sort}}</text>

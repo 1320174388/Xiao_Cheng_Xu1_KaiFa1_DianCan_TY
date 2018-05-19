@@ -140,7 +140,7 @@ Page({
      */
     var orderlist = [
       {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
+        id: 1, order_number: '20180514205236', order_status: 1,
         user_id: '2', order_remarks: '正常', table_id: '3', order_time: '20180514 20:54'
       }
     ];
@@ -150,7 +150,7 @@ Page({
      */
     var orderqucan = [
       {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
+        id: 1, order_number: '2018051420540', order_status: 1,
         user_id: '2', order_remarks: '正常', take_time: '2018-05-17 15:20',
         order_time: '20180514 20:54'
       }
@@ -161,7 +161,7 @@ Page({
      */
     var orderhist = [
       {
-        id: 1, order_number: '20180514205402202306864', order_status: 1,
+        id: 1, order_number: '2018051420540', order_status: 1,
         user_id: '2', order_remarks: '正常', order_type: 'eat',
         order_time: '20180514 20:54'
       }
