@@ -59,14 +59,14 @@
       {
         "pagePath": "pages/Home/Order/orderNumber/index",
         "text": "订单",
-        "iconPath": "icon/订单1.png",
-        "selectedIconPath": "icon/订单.png"
+        "iconPath": "icon/firstOrder.png",
+        "selectedIconPath": "icon/selectOrder.png"
       },
       {
         "pagePath": "pages/Home/My/my",
         "text": "我的",
         "iconPath": "icon/我的 (1).png",
-        "selectedIconPath": "icon/我 的当选.png"
+        "selectedIconPath": "icon/My.png"
       }
     ]
   }
