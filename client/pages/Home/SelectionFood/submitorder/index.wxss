@@ -159,7 +159,7 @@
 .remarks{
   width: 90%;
   margin-left: 5%;
-  margin-top: 25%;
+  margin-top: 15rpx;
   border-radius:10rpx;
   background-color: white;
 }
@@ -169,7 +169,7 @@
 }
 /*确认  */
 .last{
-  position: relative;
+  position: fixed;
   bottom: 0%;
   width: 99%;
   margin-top: 20rpx;

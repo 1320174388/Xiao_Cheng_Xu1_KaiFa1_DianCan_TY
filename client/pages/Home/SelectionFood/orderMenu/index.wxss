@@ -211,7 +211,8 @@
  .flex-shop{
   z-index: 2000;
   position:fixed;
-  top:77%;
+  bottom: 0;
+  /* top:77%; */
   width:100%;
   background-color:#fff;
 } 
@@ -377,8 +378,8 @@ padding:0 5px;
   color:#fff;
   width:15px;
   height:10px;
-  position:absolute;
-  bottom:85rpx;
+  position:relative;
+  bottom:-22rpx;
   left:41px;
   border-radius:50%;
   line-height:15px;
@@ -425,7 +426,7 @@ height:80rpx;
   border-top:1rpx solid rgba(0, 0, 0, 0.05);
   background-color: #fff;
   height:80rpx;
-  margin-top:40rpx;
+  margin-top:20rpx;
 }
 .dianji{
   width:100%;

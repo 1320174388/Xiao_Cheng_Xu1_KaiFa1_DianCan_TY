@@ -47,6 +47,7 @@
                   </view>
                 </view>
               </block>
+              <view style='height:40rpx;background-color: #eee;'></view>
             </scroll-view>
           </view>
         </view>
