@@ -5,7 +5,7 @@ var order_bindtap_type = 0;
 // pages/Home/submit/intoroom/index.js
 Page({
 
-  /**
+  /**food_list_order_number
    * 页面的初始数据
    */
   data: {
@@ -122,7 +122,7 @@ Page({
     order_bindtap_type++;
     app.point('支付中', 'loading', 72000000);
     var This = this;
-    var order_number = myDate.getFullYear() + (myDate.getMonth() + 1) + myDate.getDate()+(myDate.getHours() + 1) + myDate.getMinutes();
+    var order_number = ''+myDate.getFullYear() + (myDate.getMonth() + 1) + myDate.getDate()+(myDate.getHours() + 1) + myDate.getMinutes();
     setTimeout(function(res){
       wx.setStorageSync("payLoser", true);
       var food_list_info = wx.getStorageSync('food_info_arr');
