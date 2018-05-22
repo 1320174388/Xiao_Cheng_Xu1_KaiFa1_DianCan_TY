@@ -66,15 +66,16 @@
             <view style="flex:1" class='content-numNames'>
               <text>操作</text>
             </view>
-            <view style="flex:2" class='content-Numbers'>
-              <text data-order_id="{{item.order_number}}" bindtap="orderinfo" style='color: #77b3ff;'>详情</text>
+            <view style="flex:2" class='content-Numbers' data-order_id="{{item.order_number}}"
+                   bindtap="orderinfo">
+              <text style='color: #77b3ff;'>详情</text>
             </view>
             <view style="flex:1">
               <text></text>
             </view>
-            <view style="flex:2">
-              <text data-order_id="{{index}}" data-table_id="{{item.table_id}}" 
-              bindtap="updateorder" style='color: #fa8391;'>修改</text>
+            <view style="flex:2" data-order_id="{{index}}" data-table_id="{{item.table_id}}" 
+              bindtap="updateorder">
+              <text style='color: #fa8391;'>修改</text>
             </view>
           </view>
         </view>
@@ -144,8 +145,9 @@
             <view style="flex:1" class='content-numNames'>
               <text>操作</text>
             </view>
-            <view style="flex:2">
-              <text data-order_id="{{item.order_number}}" bindtap="orderinfo" style='color: #77b3ff;'>详情</text>
+            <view style="flex:2" class='content-Numbers' data-order_id="{{item.order_number}}"
+                   bindtap="orderinfo">
+              <text style='color: #77b3ff;'>详情</text>
             </view>
             <view style="flex:1">
               <text></text>
@@ -222,8 +224,9 @@
             <view style="flex:1" class='content-numNames'>
               <text>操作</text>
             </view>
-            <view style="flex:2">
-              <text data-order_id="{{item.order_number}}" bindtap="orderinfo" style='color: #77b3ff;'>详情</text>
+            <view style="flex:2" class='content-Numbers' data-order_id="{{item.order_number}}"
+                   bindtap="orderinfo">
+              <text style='color: #77b3ff;'>详情</text>
             </view>
             <view style="flex:1">
               <text></text>

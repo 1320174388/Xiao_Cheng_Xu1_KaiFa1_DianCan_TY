@@ -35,7 +35,7 @@
 				{
 					"id": 0,
 					"name": "后台首页",
-					"pathName": "pages/Home/SelectionFood/payMoney/index",
+					"pathName": "pages/Admin/MenuManage/orderManage/index",
 					"query": ""
 				}
 			]

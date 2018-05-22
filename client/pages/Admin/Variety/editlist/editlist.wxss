@@ -62,8 +62,3 @@ textarea{
   background: #77B3FF;
   color:#fff;
 }
-.info{
-  text-align: right;
-  display: inline;
-  border: 1rpx solid red;
-}
