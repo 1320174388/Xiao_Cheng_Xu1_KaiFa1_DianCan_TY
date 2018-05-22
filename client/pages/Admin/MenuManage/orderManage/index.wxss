@@ -78,7 +78,7 @@ page{
   text-align: center;
 }
 .content-Numbers{
-  border-right:solid 1px #eaeaea;
+  text-align: right;
 }
 .textHidden{
    /* 超出一行文字自动隐藏 */

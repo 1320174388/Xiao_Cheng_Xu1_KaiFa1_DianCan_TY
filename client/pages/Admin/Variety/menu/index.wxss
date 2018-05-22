@@ -47,6 +47,7 @@ visibility: hidden;
 }
 .list .right{
   width:20%;
+  border-left: 1rpx solid #eaeaea;
 }
 .right button{
   font-size:35rpx;
@@ -56,8 +57,15 @@ visibility: hidden;
 button.modify{
   color:#9ECDF8;
 }
+button.modify::after{
+  border: none;
+  border-bottom:1rpx solid #eaeaea; 
+}
 button.remove{
   color:#F86374;
+}
+button.remove::after{
+  border: none;
 }
 button.add{
   background: #fff;
@@ -141,8 +149,23 @@ button.add{
 .price{
   color:#FA8D9A;
 }
-.menu .right button{
-  padding:10rpx 30rpx;
+.menu .right{
+  border-left:1rpx solid #eaeaea; 
+}
+button.modifys{
+  color:#9ECDF8;
+  margin-top: 20rpx;
+}
+button.modifys::after{
+  border: none;
+  border-bottom:1rpx solid #eaeaea; 
+}
+button.removes{
+  padding-top: 10rpx;
+  color:#F86374;
+}
+button.removes::after{
+  border: none;
 }
 #model{
   width:100%;
