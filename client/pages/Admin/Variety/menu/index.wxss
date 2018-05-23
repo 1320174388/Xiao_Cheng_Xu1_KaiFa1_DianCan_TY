@@ -109,7 +109,7 @@ button.add{
   display: flex;
 }
 .menu .left image{
-  width:150rpx;
+  width:160rpx;
   min-height: 150rpx;
   height: 150rpx;
   margin-right:20rpx;
@@ -134,13 +134,17 @@ button.add{
 .title .name{
   float:left;
 }
-.title .xiangq{
+.xiangq{
   float:right;
   color:#666;
   font-size:30rpx;
   padding:0;
   margin:0;
   background: #fff;
+  line-height: 62rpx;
+}
+.xiangq::after{
+  border:none;
 }
 .num{
   color: #666;

@@ -46,7 +46,7 @@
                 <view class='title'>
                     <view class='name'>{{item.food_name}}</view>
                     <form bindsubmit="infomation">
-                        <button  form-type="submit" class='xiangq'>详情</button> 
+                        <button  form-type="submit" class='xiangq'>详情\t>></button> 
                         <input hidden value='{{index}}' name="attr"/>
                     </form>
                 </view>
