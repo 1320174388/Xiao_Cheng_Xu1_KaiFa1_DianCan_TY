@@ -19,10 +19,20 @@ Page({
   // 删除菜品
   delfoods:function(e){
     var deldatas = this.data.datas;
-    console.log(e.currentTarget.dataset.id);
-    delete deldatas[e.currentTarget.dataset.id];
-    wx.setStorageSync('datas', deldatas);
-    this.onLoad();
+    var This = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除吗？',
+      success:function(res){
+        if(res.confirm){
+          delete deldatas[e.currentTarget.dataset.id];
+          wx.setStorageSync('datas', deldatas);
+          app.point("删除成功", "success", 2000);
+          This.onLoad();
+        }
+      }
+    })
+    
   },
   // 修改菜品信息
   editfoods:function(e){
@@ -154,11 +164,20 @@ Page({
   // 删除菜品分类
   removes:function(e){
     var delfoodclass = this.data.foodclass;
-    console.log(e.currentTarget.dataset.remid);
-    console.log(delfoodclass);
-    delete delfoodclass[e.currentTarget.dataset.remid];
-    wx.setStorageSync('foodclass', delfoodclass);
-    this.onLoad();
+    var This = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除吗？',
+      success:function(res){
+        if(res.confirm){
+          delete delfoodclass[e.currentTarget.dataset.remid];
+          wx.setStorageSync('foodclass', delfoodclass);
+          app.point("删除成功", "success", 2000);
+          This.onLoad();
+        }
+      }
+    })
+    
   },
 
 // 修改菜品分类

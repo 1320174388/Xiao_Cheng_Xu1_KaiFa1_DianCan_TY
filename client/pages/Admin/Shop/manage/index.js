@@ -92,14 +92,24 @@ Page({
   },
 // 删除座号
   hidedel: function (e) {
-    var deldesk = wx.getStorageSync('desk');
-    delete deldesk[e.currentTarget.dataset.editid];
-    wx.setStorageSync('desk', deldesk);
-    app.point('删除成功','success',3000);
     var This = this;
-    setTimeout(function(res){
-      This.onLoad();
-    },3000);
+    var deldesk = wx.getStorageSync('desk');
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除吗？',
+      success:function(res){
+        if(res.confirm){
+          delete deldesk[e.currentTarget.dataset.editid];
+          wx.setStorageSync('desk', deldesk);
+          app.point('删除成功', 'success', 2000);
+          
+          setTimeout(function (res) {
+            This.onLoad();
+          }, 3000);
+        }
+      }
+    })
+    
   },
 // 二维码
   tap:function(e){

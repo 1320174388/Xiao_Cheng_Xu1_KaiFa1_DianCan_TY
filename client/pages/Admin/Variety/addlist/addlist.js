@@ -1,5 +1,7 @@
 var config = require('../../../../config.js');
 var app = getApp();
+// 滚动选择器
+var picker_value = 0;
 // pages/Admin/addlist/addlist.js
 Page({
 
@@ -34,15 +36,19 @@ Page({
       });
     });
   },
-
+  // 选择分类
+  slide_change: function (res) {
+    picker_value = res.detail.value[0];
+  },
   /**
    * 添加菜品
    */
   formSubmit: function (e) {
     console.log(e);
     var This = this;
+    var classlist = This.data.classlist;
+    var class_id = classlist[picker_value].id;
     This.data.image_url;
-    var class_id = e.detail.value.class_id;
     var food_info = e.detail.value.food_info;
     var food_name = e.detail.value.food_name;
     var food_price = e.detail.value.food_price;
