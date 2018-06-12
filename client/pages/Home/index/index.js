@@ -62,6 +62,12 @@ Page({
       url: '/pages/Home/SelectionFood/imgOrder/index',
     })
   },
+  // 拨打电话
+  phone_dlth: function () {
+    wx.makePhoneCall({
+      phoneNumber: '010-86220269'
+    })
+  },
 
   onShareAppMessage:function(){
     
