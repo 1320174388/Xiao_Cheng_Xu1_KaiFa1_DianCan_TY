@@ -32,7 +32,7 @@
           <input placeholder='搜索' name='food_name_search'/>
         </view>  
         <view style="flex:1">
-            <button class='lookup' formType="submit">搜索</button>
+            <button class='lookup' formType="">搜索</button>
         </view>  
       </view>
     </form> 

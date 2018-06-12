@@ -84,10 +84,20 @@ Page({
 
   //删除
   deleteClick: function (e) {
-    console.log(e.currentTarget.dataset.editid)
+    var that = this;
     var delarray = wx.getStorageSync('management');
-    delete delarray[e.currentTarget.dataset.editid];
-    wx.setStorageSync('management', delarray);
-    this.onLoad();
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除吗？',
+      success:function(res){
+        if(res.confirm){
+          delete delarray[e.currentTarget.dataset.editid];
+          wx.setStorageSync('management', delarray);
+          app.point("删除成功", "success", 2000);
+          that.onLoad();
+        }
+      }
+    })
+    
   }
 })

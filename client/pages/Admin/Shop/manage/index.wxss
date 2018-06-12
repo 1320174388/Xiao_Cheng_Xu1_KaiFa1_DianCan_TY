@@ -46,13 +46,14 @@ page{
   overflow: hidden;
   text-overflow: ellipsis;
   color:#000;
-  text-align: right;
+  text-align: left;
 }
 .values{
   width:70%;
   color:#000;
   line-height: 1.5;
   text-align: left;
+  margin-top: 16rpx;
 }
 .pic{
   width:95%;

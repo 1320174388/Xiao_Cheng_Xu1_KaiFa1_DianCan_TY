@@ -18,7 +18,7 @@
 <view class="containers">
   <view class='addres'>
     <text class="iconfont icon-dizhi icoard"></text>  
-    <text class="address"  bindtap='maps'>北京市海淀区高里掌路1号院6号楼201-123</text>
+    <text class="address"  bindtap='maps'>地老天荒科技有限公司</text>
   </view>
   <view class='phone' bindtap='tell'>
      <text class="iconfont icon-phone right"></text> 

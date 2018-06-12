@@ -84,8 +84,19 @@ Page({
 //删除
   deleteClick: function (e) {
     var delarray=this.data.array;
-    delete delarray[e.currentTarget.dataset.editid];
-    wx.setStorageSync('jurisdiction', delarray);
-    this.onLoad();
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除吗？',
+      success:function(res){
+        if(res.confirm){
+          delete delarray[e.currentTarget.dataset.editid];
+          wx.setStorageSync('jurisdiction', delarray);
+          app.point("删除成功","success",2000);
+          that.onLoad();
+        }
+      }
+    })
+    
   }
 })
